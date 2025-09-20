@@ -18,13 +18,9 @@ export function AppHeader() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image
-              src="/logo.png"
-              alt="Street Roots Logo"
-              width={100}
-              height={40}
-              className="object-contain"
-            />
+            <span className="font-bold text-lg font-headline">
+              Street Roots
+            </span>
           </Link>
           <nav className="hidden gap-6 md:flex">
             {navLinks.map((link) => (
@@ -53,13 +49,9 @@ export function AppHeader() {
                     href="/"
                     className="flex items-center gap-2 text-lg font-semibold"
                   >
-                    <Image
-                      src="/logo.png"
-                      alt="Street Roots Logo"
-                      width={100}
-                      height={40}
-                      className="object-contain"
-                    />
+                    <span className="font-bold text-lg font-headline">
+                      Street Roots
+                    </span>
                     <span className="sr-only">Street Roots</span>
                   </Link>
                   {navLinks.map((link) => (
