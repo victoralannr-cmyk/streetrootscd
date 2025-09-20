@@ -12,7 +12,7 @@ const navLinks = [
   { href: "#contact", label: "Contato" },
 ];
 
-const logoUrl = "https://i.postimg.cc/vZp2y49k/550494427-24780280111639226-1572840491972429960-n.jpg";
+const logoUrl = "https://i.postimg.cc/T1pnh9v9/550494427-24780280111639226-1572840491972429960-n-removebg-preview.png";
 
 export function AppHeader() {
   return (
@@ -38,7 +38,7 @@ export function AppHeader() {
               src={logoUrl}
               alt="Street Roots Logo"
               width={140}
-              height={50}
+              height={40}
               className="object-contain"
             />
           </Link>
