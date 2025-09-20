@@ -3,8 +3,8 @@
     {
       "id": "diego-profile",
       "description": "Profile picture of Diego Avelino",
-      "imageUrl": "https://picsum.photos/seed/diego/400/400",
-      "imageHint": "male portrait"
+      "imageUrl": "https://picsum.photos/seed/diego-avelino/400/400",
+      "imageHint": "man selfie"
     },
     {
       "id": "carlos-profile",
