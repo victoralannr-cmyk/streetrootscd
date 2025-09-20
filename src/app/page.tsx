@@ -69,6 +69,7 @@ const galleryCaptions = [
 ];
 
 const mapImage = PlaceHolderImages.find((p) => p.id === "map-placeholder");
+const heroBackgroundImageUrl = "https://i.postimg.cc/C1HhyZPs/images-4-removebg-preview.png";
 
 export default function Home() {
   return (
@@ -79,6 +80,13 @@ export default function Home() {
           id="home"
           className="relative flex h-[calc(100vh-5rem)] w-full flex-col items-center justify-center text-center"
         >
+          <Image
+            src={heroBackgroundImageUrl}
+            alt="Fundo da barbearia"
+            fill
+            className="object-cover z-0"
+            priority
+          />
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="container relative">
             <h1 className="font-headline text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl [text-shadow:0_4px_8px_rgba(0,0,0,0.4)]">
