@@ -142,48 +142,6 @@ export default function Home() {
         </section>
 
         <section
-          id="services"
-          className="w-full py-12 md:py-24 lg:py-32 bg-background/95"
-        >
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                  Nossos Serviços
-                </h2>
-                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Oferecemos uma variedade de serviços para realçar o seu
-                  estilo.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 mt-12">
-              {services.map((service) => (
-                <Card
-                  key={service.name}
-                  className="bg-card flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-                >
-                  <CardHeader>
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <service.icon className="h-8 w-8" />
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <CardTitle>{service.name}</CardTitle>
-                    <p className="text-muted-foreground">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <p className="text-lg font-bold">{service.price}</p>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section
           id="about"
           className="w-full py-12 md:py-24 lg:py-32 bg-background"
         >
@@ -322,6 +280,48 @@ export default function Home() {
           </div>
         </section>
 
+        <section
+          id="services"
+          className="w-full py-12 md:py-24 lg:py-32 bg-background/95"
+        >
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+                  Nossos Serviços
+                </h2>
+                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Oferecemos uma variedade de serviços para realçar o seu
+                  estilo.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 mt-12">
+              {services.map((service) => (
+                <Card
+                  key={service.name}
+                  className="bg-card flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
+                >
+                  <CardHeader>
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <service.icon className="h-8 w-8" />
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <CardTitle>{service.name}</CardTitle>
+                    <p className="text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <p className="text-lg font-bold">{service.price}</p>
+                  </CardFooter>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container grid items-center justify-center gap-8 px-4 md:px-6">
             <div className="space-y-3 text-center">
@@ -383,5 +383,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
