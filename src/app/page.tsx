@@ -9,6 +9,8 @@ import {
   Scissors,
   Sparkles,
   Award,
+  Phone,
+  Clock,
 } from "lucide-react";
 import { AppHeader } from "@/components/header";
 import { AppFooter } from "@/components/footer";
@@ -100,6 +102,30 @@ const galleryCaptions = [
 
 const mapImage = PlaceHolderImages.find((p) => p.id === "map-placeholder");
 const heroImage = PlaceHolderImages.find((p) => p.id === "diego-profile");
+
+const newBarbers = [
+  {
+    name: "Diego Avelino",
+    subtitle: "Street Style Specialist",
+    address: "Rua da Barbearia, 123 - Centro",
+    phone: "(11) 98765-4321",
+    hours: "Seg à Sáb, 9h - 20h",
+    instagram: "@diego.streetroots",
+    mapsUrl: "#",
+    whatsappUrl: "https://wa.me/5511987654321",
+  },
+  {
+    name: "Carlos Davi",
+    subtitle: "Cortes, Tranças & Dreadlocks",
+    address: "Rua da Barbearia, 123 - Centro",
+    phone: "(11) 91234-5678",
+    hours: "Seg à Sáb, 9h - 20h",
+    instagram: "@carlos.streetroots",
+    mapsUrl: "#",
+    whatsappUrl: "https://wa.me/5511912345678",
+  },
+];
+
 
 export default function Home() {
   return (
@@ -278,7 +304,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        
         <section
           id="services"
           className="w-full py-12 md:py-24 lg:py-32 bg-background/95"
@@ -376,8 +402,68 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-12 md:grid-cols-2">
+              {newBarbers.map((barber) => (
+                <div
+                  key={barber.name}
+                  className="bg-gray-800/50 border border-yellow-400/20 rounded-2xl p-6 flex flex-col gap-4"
+                >
+                  <div className="text-center">
+                    <h3 className="text-3xl font-bold font-headline text-yellow-400">
+                      {barber.name}
+                    </h3>
+                    <p className="font-semibold text-green-400">
+                      {barber.subtitle}
+                    </p>
+                  </div>
+                  <div className="space-y-3 text-lg">
+                    <div className="flex items-center gap-3">
+                      <MapPin className="h-6 w-6 text-yellow-400" />
+                      <span>{barber.address}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Phone className="h-6 w-6 text-yellow-400" />
+                      <span>{barber.phone}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Clock className="h-6 w-6 text-yellow-400" />
+                      <span>{barber.hours}</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Instagram className="h-6 w-6 text-yellow-400" />
+                      <span>{barber.instagram}</span>
+                    </div>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 mt-auto pt-4">
+                    <Button
+                      asChild
+                      className="w-full font-bold text-lg py-6 bg-gradient-to-r from-yellow-400 to-green-500 text-black shadow-[0_0_15px_rgba(163,230,53,0.5)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(163,230,53,0.8)] hover:scale-105"
+                    >
+                      <Link href={barber.whatsappUrl} target="_blank">
+                        Falar com {barber.name.split(" ")[0]}
+                      </Link>
+                    </Button>
+                    <Button
+                      asChild
+                      className="w-full font-bold text-lg py-6 bg-gradient-to-r from-yellow-400 to-green-500 text-black shadow-[0_0_15px_rgba(250,204,21,0.5)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(250,204,21,0.8)] hover:scale-105"
+                    >
+                      <Link href={barber.mapsUrl} target="_blank">
+                        Ver no Maps
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
       <AppFooter />
     </div>
   );
 }
+
+    
