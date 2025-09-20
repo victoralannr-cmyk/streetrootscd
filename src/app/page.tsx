@@ -68,7 +68,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="container relative">
             <h1 className="font-headline text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl [text-shadow:0_4px_8px_rgba(0,0,0,0.4)]">
-              Estilo que Deixa Marca.
+              A experiência certa muda sua vida.
             </h1>
             <p className="mx-auto mt-4 max-w-[700px] text-lg text-foreground/80 md:text-xl">
               Avelino & Davi: onde a navalha encontra a arte.
