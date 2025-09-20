@@ -143,9 +143,9 @@ export default function Home() {
                         <Image
                           src={barber.image.imageUrl}
                           alt={`Foto de ${barber.name}`}
-                          width={600}
+                          width={400}
                           height={400}
-                          className="w-full rounded-t-lg object-cover aspect-[4/3]"
+                          className="w-full rounded-t-lg object-cover aspect-square"
                           data-ai-hint={barber.image.imageHint}
                         />
                       )}
