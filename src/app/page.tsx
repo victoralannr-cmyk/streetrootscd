@@ -118,8 +118,7 @@ export default function Home() {
                     Onde o estilo de rua encontra a navalha.
                   </h1>
                   <p className="max-w-[600px] text-foreground/80 md:text-xl">
-                    Na Street Roots, cada corte é uma declaração de
-                    autenticidade. Agende seu horário e sinta a diferença.
+                    Aqui não é só corte, é estilo de vida. Você sai diferente, mais você mesmo. Diego e Carlos: dois mestres que vivem o que fazem.
                   </p>
                 </div>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
