@@ -437,7 +437,7 @@ export default function Home() {
                       <span>{barber.instagram}</span>
                     </div>
                   </div>
-                  <div className="flex flex-col sm:flex-row gap-4 mt-auto pt-4">
+                  <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                     <Button
                       asChild
                       className="w-full font-bold text-lg py-6 bg-gradient-to-r from-yellow-400 to-green-500 text-black shadow-[0_0_15px_rgba(163,230,53,0.5)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(163,230,53,0.8)] hover:scale-105"
@@ -465,5 +465,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
