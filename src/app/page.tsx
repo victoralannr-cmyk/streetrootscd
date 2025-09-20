@@ -357,20 +357,6 @@ export default function Home() {
                 Você sai diferente, mais você mesmo. Diego e Carlos: dois mestres que vivem o que fazem. Venham conchecer nosso trabalho e chama no Wats.
               </p>
             </div>
-            <div className="mx-auto w-full max-w-4xl">
-              {mapImage && (
-                <div className="rounded-lg overflow-hidden border-2 border-border shadow-2xl">
-                  <Image
-                    src={mapImage.imageUrl}
-                    alt={mapImage.description}
-                    width={1200}
-                    height={400}
-                    className="w-full object-cover aspect-[3/1]"
-                    data-ai-hint={mapImage.imageHint}
-                  />
-                </div>
-              )}
-            </div>
             <div className="flex justify-center flex-wrap gap-4 mt-4">
               <Button
                 asChild
