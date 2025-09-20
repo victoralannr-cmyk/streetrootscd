@@ -73,13 +73,21 @@ export default function Home() {
             <p className="mx-auto mt-4 max-w-[700px] text-lg text-foreground/80 md:text-xl">
               Avelino & Davi: onde a navalha encontra a arte.
             </p>
-            <div className="mt-8">
-              <Link href="#about">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href={barbers[0].whatsapp} target="_blank" rel="noopener noreferrer">
                 <Button
                   size="lg"
-                  className="font-bold text-lg px-8 py-6 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-105"
+                  className="font-bold text-lg px-8 py-6 bg-primary text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
                 >
-                  Agende seu corte agora
+                  Agendar com Diego
+                </Button>
+              </Link>
+              <Link href={barbers[1].whatsapp} target="_blank" rel="noopener noreferrer">
+                <Button
+                  size="lg"
+                  className="font-bold text-lg px-8 py-6 bg-accent text-accent-foreground shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
+                >
+                  Agendar com Carlos
                 </Button>
               </Link>
             </div>
