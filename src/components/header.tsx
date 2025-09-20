@@ -17,7 +17,7 @@ const logoUrl = "https://i.postimg.cc/T1pnh9v9/550494427-24780280111639226-15728
 export function AppHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
+      <div className="container flex h-20 max-w-screen-2xl items-center justify-between">
         {/* Left Section */}
         <nav className="hidden gap-6 md:flex">
           {navLinks.slice(0, 2).map((link) => (
@@ -37,8 +37,8 @@ export function AppHeader() {
             <Image
               src={logoUrl}
               alt="Street Roots Logo"
-              width={140}
-              height={40}
+              width={160}
+              height={60}
               className="object-contain"
             />
           </Link>
@@ -81,8 +81,8 @@ export function AppHeader() {
                      <Image
                         src={logoUrl}
                         alt="Street Roots Logo"
-                        width={140}
-                        height={50}
+                        width={160}
+                        height={60}
                         className="object-contain"
                       />
                     <span className="sr-only">Street Roots</span>

@@ -77,7 +77,7 @@ export default function Home() {
       <main className="flex-1">
         <section
           id="home"
-          className="relative flex h-[calc(100vh-3.5rem)] w-full flex-col items-center justify-center text-center"
+          className="relative flex h-[calc(100vh-5rem)] w-full flex-col items-center justify-center text-center"
         >
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="container relative">
