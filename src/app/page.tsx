@@ -325,11 +325,10 @@ export default function Home() {
           <div className="container grid items-center justify-center gap-8 px-4 md:px-6">
             <div className="space-y-3 text-center">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
-                Onde nos encontrar?
+                Aqui não é só corte, é estilo de vida.
               </h2>
               <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Estamos na Rua Don Fragoso, Q28 L05. Venha nos visitar ou
-                fale conosco online.
+                Você sai diferente, mais você mesmo. Diego e Carlos: dois mestres que vivem o que fazem. Venham conchecer nosso trabalho e chama no Wats.
               </p>
             </div>
             <div className="mx-auto w-full max-w-4xl">
