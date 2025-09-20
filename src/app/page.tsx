@@ -18,7 +18,7 @@ const barbers = [
     name: "Diego Avelino",
     style: "Street Premium",
     specialties: "Cortes freestyle e design",
-    bio: "Mestre do freestyle, Diego transforma cada corte em uma obra de arte. Seu estilo street premium combina precisão técnica com criatividade ousada, garantindo um visual único e marcante.",
+    bio: "Diego Avelino vive o street style na pele. Mais que barbeiro, ele é referência quando o assunto é visual urbano. Cada corte é uma obra de arte que respeita sua personalidade e eleva sua confiança.",
     image: PlaceHolderImages.find((p) => p.id === "diego-profile"),
     whatsapp:
       "https://wa.me/5511999999991?text=Olá%20Diego,%20gostaria%20de%20agendar%20um%20corte!",
