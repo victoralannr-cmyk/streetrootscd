@@ -69,7 +69,7 @@ const galleryCaptions = [
 ];
 
 const mapImage = PlaceHolderImages.find((p) => p.id === "map-placeholder");
-const heroBackgroundImageUrl = "https://i.postimg.cc/C1HhyZPs/images-4-removebg-preview.png";
+const heroBackgroundImageUrl = "https://i.postimg.cc/DfpVSdXb/Captura-de-tela-2025-09-18-221954.png";
 
 export default function Home() {
   return (
