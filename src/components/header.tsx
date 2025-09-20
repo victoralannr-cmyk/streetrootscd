@@ -15,15 +15,37 @@ const navLinks = [
 export function AppHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="mr-4 flex items-center">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold text-lg font-headline">
-              Street Roots
-            </span>
+      <div className="container flex h-14 max-w-screen-2xl items-center justify-between">
+        {/* Left Section */}
+        <nav className="hidden gap-6 md:flex">
+          {navLinks.slice(0, 2).map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Center Section (Logo) */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <Link href="/" className="flex items-center space-x-2">
+            <Image
+              src="/logo.png"
+              alt="Street Roots Logo"
+              width={140}
+              height={50}
+              className="object-contain"
+            />
           </Link>
+        </div>
+
+        {/* Right Section */}
+        <div className="flex items-center justify-end space-x-2">
           <nav className="hidden gap-6 md:flex">
-            {navLinks.map((link) => (
+            {navLinks.slice(2).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -32,9 +54,14 @@ export function AppHeader() {
                 {link.label}
               </Link>
             ))}
+            <Link href="#contact">
+              <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity">
+                Agendar Agora
+              </Button>
+            </Link>
           </nav>
-        </div>
-        <div className="flex flex-1 items-center justify-end space-x-2">
+          
+          {/* Mobile Menu */}
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -47,11 +74,15 @@ export function AppHeader() {
                 <nav className="grid gap-6 text-lg font-medium mt-8">
                   <Link
                     href="/"
-                    className="flex items-center gap-2 text-lg font-semibold"
+                    className="flex items-center justify-center gap-2 text-lg font-semibold"
                   >
-                    <span className="font-bold text-lg font-headline">
-                      Street Roots
-                    </span>
+                     <Image
+                        src="/logo.png"
+                        alt="Street Roots Logo"
+                        width={140}
+                        height={50}
+                        className="object-contain"
+                      />
                     <span className="sr-only">Street Roots</span>
                   </Link>
                   {navLinks.map((link) => (
@@ -67,11 +98,6 @@ export function AppHeader() {
               </SheetContent>
             </Sheet>
           </div>
-          <Link href="#contact" className="hidden sm:block">
-            <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity">
-              Agendar Agora
-            </Button>
-          </Link>
         </div>
       </div>
     </header>
