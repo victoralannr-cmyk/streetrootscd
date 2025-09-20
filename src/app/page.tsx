@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, MessageCircle, Star, MapPin } from "lucide-react";
 import { AppHeader } from "@/components/header";
 import { AppFooter } from "@/components/footer";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Card,
   CardContent,
@@ -16,28 +17,41 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 const barbers = [
   {
     name: "Diego Avelino",
-    style: "Street Premium",
-    specialties: "Cortes freestyle, design, Tranças e dreadlocks",
+    title: "Street Style Specialist",
+    rating: 5.0,
+    specialties: [
+      "Fades Modernos",
+      "Street Style",
+      "Cortes Urbanos",
+      "Design Capilar",
+    ],
     bio: "Diego Avelino vive o street style na pele. Mais que barbeiro, ele é referência quando o assunto é visual urbano. Cada corte é uma obra de arte que respeita sua personalidade e eleva sua confiança.",
+    experience: "6+ anos de experiência",
+    location: "Don Fragoso Q28 L05",
     image: PlaceHolderImages.find((p) => p.id === "diego-profile"),
     whatsapp:
       "https://wa.me/5511999999991?text=Olá%20Diego,%20gostaria%20de%20agendar%20um%20corte!",
     theme: {
       card: "border-primary/50",
       button: "bg-primary text-primary-foreground hover:bg-primary/90",
+      title: "text-primary",
     },
   },
   {
     name: "Carlos Davi",
-    style: "Vibe Tropical",
-    specialties: "Tranças e dreadlocks",
+    title: "Vibe Tropical Specialist",
+    rating: 4.9,
+    specialties: ["Tranças Nagô", "Dreadlocks", "Penteados Afro"],
     bio: "Com uma energia contagiante, Carlos é o especialista em tranças e dreadlocks. Sua vibe tropical se reflete em penteados cheios de estilo e personalidade, perfeitos para quem quer se destacar.",
+    experience: "4+ anos de experiência",
+    location: "Don Fragoso Q28 L05",
     image: PlaceHolderImages.find((p) => p.id === "carlos-profile"),
     whatsapp:
       "https://wa.me/5511999999992?text=Olá%20Carlos,%20gostaria%20de%20agendar%20um%20corte!",
     theme: {
       card: "border-accent/50",
       button: "bg-accent text-accent-foreground hover:bg-accent/90",
+      title: "text-accent",
     },
   },
 ];
@@ -74,7 +88,11 @@ export default function Home() {
               Avelino & Davi: onde a navalha encontra a arte.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href={barbers[0].whatsapp} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={barbers[0].whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   className="font-bold text-lg px-8 py-6 bg-primary text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
@@ -82,7 +100,11 @@ export default function Home() {
                   Agendar com Diego
                 </Button>
               </Link>
-              <Link href={barbers[1].whatsapp} target="_blank" rel="noopener noreferrer">
+              <Link
+                href={barbers[1].whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   className="font-bold text-lg px-8 py-6 bg-accent text-accent-foreground shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
@@ -113,43 +135,76 @@ export default function Home() {
               {barbers.map((barber) => (
                 <Card
                   key={barber.name}
-                  className={`bg-card transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${barber.theme.card}`}
+                  className={`bg-card flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${barber.theme.card}`}
                 >
-                  <CardHeader className="items-center text-center">
-                    {barber.image && (
-                      <Image
-                        src={barber.image.imageUrl}
-                        alt={`Foto de ${barber.name}`}
-                        width={120}
-                        height={120}
-                        className="rounded-full border-4 border-border object-cover"
-                        data-ai-hint={barber.image.imageHint}
-                      />
-                    )}
-                    <div className="grid gap-1 mt-4">
+                  <CardHeader className="p-0">
+                    <div className="relative">
+                      {barber.image && (
+                        <Image
+                          src={barber.image.imageUrl}
+                          alt={`Foto de ${barber.name}`}
+                          width={600}
+                          height={400}
+                          className="w-full rounded-t-lg object-cover aspect-[4/3]"
+                          data-ai-hint={barber.image.imageHint}
+                        />
+                      )}
+                      <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-background/80 px-2 py-1 text-xs font-bold backdrop-blur-sm">
+                        <Star className="h-4 w-4 fill-primary text-primary" />
+                        <span>{barber.rating.toFixed(1)}</span>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="flex flex-col flex-1 p-6 space-y-4">
+                    <div className="space-y-1">
                       <CardTitle className="text-2xl font-bold font-headline">
                         {barber.name}
                       </CardTitle>
-                      <p className="text-sm text-muted-foreground font-bold">
-                        {barber.specialties}
+                      <p
+                        className={`font-semibold ${barber.theme.title}`}
+                      >
+                        {barber.title}
                       </p>
                     </div>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-center text-foreground/90">
+                    <p className="text-foreground/90 text-sm flex-1">
                       {barber.bio}
                     </p>
+                    <div className="space-y-3">
+                      <div>
+                        <h4 className="text-sm font-semibold mb-2">
+                          Especialidades:
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {barber.specialties.map((spec) => (
+                            <Badge key={spec} variant="secondary">
+                              {spec}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-1.5">
+                          <Star className="h-4 w-4" />
+                          <span>{barber.experience}</span>
+                        </div>
+                        <div className="flex items-center gap-1.5">
+                          <MapPin className="h-4 w-4" />
+                          <span>{barber.location}</span>
+                        </div>
+                      </div>
+                    </div>
                   </CardContent>
-                  <CardFooter>
+                  <CardFooter className="p-6">
                     <Button
                       asChild
-                      className={`w-full font-bold ${barber.theme.button}`}
+                      className={`w-full font-bold text-lg py-6 ${barber.theme.button}`}
                     >
                       <Link
                         href={barber.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
+                        <MessageCircle className="h-5 w-5 mr-2" />
                         Agendar com {barber.name.split(" ")[0]}
                       </Link>
                     </Button>
