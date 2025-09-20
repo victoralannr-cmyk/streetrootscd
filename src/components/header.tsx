@@ -8,6 +8,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { href: "#about", label: "Sobre" },
+  { href: "#services", label: "Serviços" },
   { href: "#gallery", label: "Galeria" },
   { href: "#contact", label: "Contato" },
 ];
@@ -46,7 +47,7 @@ export function AppHeader() {
 
         {/* Right Section */}
         <div className="flex items-center justify-end space-x-2">
-          <nav className="hidden gap-6 md:flex">
+          <nav className="hidden gap-6 md:flex items-center">
             {navLinks.slice(2).map((link) => (
               <Link
                 key={link.href}
@@ -96,6 +97,11 @@ export function AppHeader() {
                       {link.label}
                     </Link>
                   ))}
+                   <Link href="#contact">
+                    <Button className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity">
+                      Agendar Agora
+                    </Button>
+                  </Link>
                 </nav>
               </SheetContent>
             </Sheet>

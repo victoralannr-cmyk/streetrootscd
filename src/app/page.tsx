@@ -1,6 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Instagram, MessageCircle, Star, MapPin } from "lucide-react";
+import {
+  Instagram,
+  MessageCircle,
+  Star,
+  MapPin,
+  Scissors,
+  Sparkles,
+  Award,
+} from "lucide-react";
 import { AppHeader } from "@/components/header";
 import { AppFooter } from "@/components/footer";
 import { Button } from "@/components/ui/button";
@@ -56,6 +64,27 @@ const barbers = [
   },
 ];
 
+const services = [
+  {
+    icon: Scissors,
+    name: "Corte Social",
+    description: "Alinhamento, estilo e elegância.",
+    price: "R$ 40",
+  },
+  {
+    icon: Sparkles,
+    name: "Corte + Barba",
+    description: "Visual completo com acabamento impecável.",
+    price: "R$ 65",
+  },
+  {
+    icon: Award,
+    name: "Corte + Sobrancelha",
+    description: "Realce seu olhar com um design profissional.",
+    price: "R$ 55",
+  },
+];
+
 const galleryImages = PlaceHolderImages.filter((p) =>
   p.id.startsWith("gallery-")
 ).slice(0, 6);
@@ -69,7 +98,7 @@ const galleryCaptions = [
 ];
 
 const mapImage = PlaceHolderImages.find((p) => p.id === "map-placeholder");
-const heroBackgroundImageUrl = "https://i.postimg.cc/DfpVSdXb/Captura-de-tela-2025-09-18-221954.png";
+const heroImage = PlaceHolderImages.find((p) => p.id === "diego-profile");
 
 export default function Home() {
   return (
@@ -78,48 +107,87 @@ export default function Home() {
       <main className="flex-1">
         <section
           id="home"
-          className="relative flex h-[calc(100vh-5rem)] w-full flex-col items-center justify-center text-center"
+          className="w-full py-12 md:py-24 lg:py-32 bg-background"
         >
-          <Image
-            src={heroBackgroundImageUrl}
-            alt="Fundo da barbearia"
-            fill
-            className="object-cover z-0"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/40"></div>
-          <div className="container relative">
-            <h1 className="font-headline text-5xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl [text-shadow:0_4px_8px_rgba(0,0,0,0.4)]">
-              A experiência certa muda sua vida.
-            </h1>
-            <p className="mx-auto mt-4 max-w-[700px] text-lg text-foreground/80 md:text-xl">
-              Avelino & Davi: onde a navalha encontra a arte.
-            </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href={barbers[0].whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="font-bold text-lg px-8 py-6 bg-primary text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    Onde o estilo de rua encontra a navalha.
+                  </h1>
+                  <p className="max-w-[600px] text-foreground/80 md:text-xl">
+                    Na Street Roots, cada corte é uma declaração de
+                    autenticidade. Agende seu horário e sinta a diferença.
+                  </p>
+                </div>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row">
+                  <Link
+                    href={barbers[0].whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button
+                      size="lg"
+                      className="font-bold text-lg px-8 py-6 bg-primary text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
+                    >
+                      Agendar Agora
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              {heroImage && (
+                <Image
+                  src={heroImage.imageUrl}
+                  alt={heroImage.description}
+                  width={600}
+                  height={600}
+                  className="mx-auto aspect-square overflow-hidden rounded-xl object-cover sm:w-full lg:order-last"
+                  data-ai-hint={heroImage.imageHint}
+                />
+              )}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="services"
+          className="w-full py-12 md:py-24 lg:py-32 bg-background/95"
+        >
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+                  Nossos Serviços
+                </h2>
+                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Oferecemos uma variedade de serviços para realçar o seu
+                  estilo.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 mt-12">
+              {services.map((service) => (
+                <Card
+                  key={service.name}
+                  className="bg-card flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
                 >
-                  Agendar com Diego
-                </Button>
-              </Link>
-              <Link
-                href={barbers[1].whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="font-bold text-lg px-8 py-6 bg-accent text-accent-foreground shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
-                >
-                  Agendar com Carlos
-                </Button>
-              </Link>
+                  <CardHeader>
+                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <service.icon className="h-8 w-8" />
+                    </div>
+                  </CardHeader>
+                  <CardContent className="space-y-2">
+                    <CardTitle>{service.name}</CardTitle>
+                    <p className="text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <p className="text-lg font-bold">{service.price}</p>
+                  </CardFooter>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
@@ -132,7 +200,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                  Nossos Artistas
+                  Conheça Nossos Artistas
                 </h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Dois mestres, um objetivo: elevar seu estilo ao próximo nível.
@@ -231,7 +299,7 @@ export default function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-accent">
-                  Nossa Arte
+                  Nossa Galeria
                 </h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   Confira alguns dos nossos trabalhos. Cada corte conta uma
@@ -267,10 +335,10 @@ export default function Home() {
           <div className="container grid items-center justify-center gap-8 px-4 md:px-6">
             <div className="space-y-3 text-center">
               <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
-                Entre em Contato
+                Onde nos encontrar?
               </h2>
               <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Estamos na Rua da Barbearia, 123 - Centro. Venha nos visitar ou
+                Estamos na Rua Don Fragoso, Q28 L05. Venha nos visitar ou
                 fale conosco online.
               </p>
             </div>
