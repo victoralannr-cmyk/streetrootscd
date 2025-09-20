@@ -12,6 +12,8 @@ const navLinks = [
   { href: "#contact", label: "Contato" },
 ];
 
+const logoUrl = "https://i.postimg.cc/vZp2y49k/550494427-24780280111639226-1572840491972429960-n.jpg";
+
 export function AppHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -33,7 +35,7 @@ export function AppHeader() {
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/logo.png"
+              src={logoUrl}
               alt="Street Roots Logo"
               width={140}
               height={50}
@@ -77,7 +79,7 @@ export function AppHeader() {
                     className="flex items-center justify-center gap-2 text-lg font-semibold"
                   >
                      <Image
-                        src="/logo.png"
+                        src={logoUrl}
                         alt="Street Roots Logo"
                         width={140}
                         height={50}
