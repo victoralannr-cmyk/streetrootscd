@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Scissors, Menu } from "lucide-react";
+import Image from "next/image";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
@@ -17,10 +18,13 @@ export function AppHeader() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <div className="mr-4 flex items-center">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Scissors className="h-6 w-6 text-primary" />
-            <span className="font-bold font-headline sm:inline-block">
-              Avelino & Davi
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Street Roots Logo"
+              width={100}
+              height={40}
+              className="object-contain"
+            />
           </Link>
           <nav className="hidden gap-6 md:flex">
             {navLinks.map((link) => (
@@ -49,8 +53,14 @@ export function AppHeader() {
                     href="/"
                     className="flex items-center gap-2 text-lg font-semibold"
                   >
-                    <Scissors className="h-6 w-6 text-primary" />
-                    <span className="sr-only">Avelino & Davi</span>
+                    <Image
+                      src="/logo.png"
+                      alt="Street Roots Logo"
+                      width={100}
+                      height={40}
+                      className="object-contain"
+                    />
+                    <span className="sr-only">Street Roots</span>
                   </Link>
                   {navLinks.map((link) => (
                     <Link

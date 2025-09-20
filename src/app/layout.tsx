@@ -3,7 +3,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: "Avelino & Davi Barbers",
+  title: "Street Roots",
   description:
     "Barbearia premium com Diego Avelino e Carlos Davi. Agende seu corte e sinta a diferença.",
 };
