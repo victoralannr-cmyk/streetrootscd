@@ -357,35 +357,6 @@ export default function Home() {
                 Você sai diferente, mais você mesmo. Diego e Carlos: dois mestres que vivem o que fazem. Venham conchecer nosso trabalho e chama no Wats.
               </p>
             </div>
-            <div className="flex justify-center flex-wrap gap-4 mt-4">
-              <Button
-                asChild
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold gap-2"
-              >
-                <Link
-                  href="https://wa.me/5511999999990?text=Olá!%20Gostaria%20de%20mais%20informações."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <MessageCircle /> WhatsApp
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="font-bold gap-2 border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground"
-              >
-                <Link
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Instagram /> Instagram
-                </Link>
-              </Button>
-            </div>
           </div>
         </section>
 
