@@ -87,7 +87,7 @@ const galleryItems = [
   {
     id: "gallery-5",
     category: "Street Style",
-    title: "Fade",
+    title: "Riscos street",
     barber: "Diego Avelino",
   },
   {
@@ -105,7 +105,7 @@ const galleryItems = [
   {
     id: "gallery-7",
     category: "Design",
-    title: "Riscos street",
+    title: "Fade",
     barber: "Diego Avelino",
   },
 ];
@@ -165,9 +165,13 @@ export default function Home() {
         {/* Hero Section */}
         <section
           id="home"
-          className="w-full py-20 md:py-32 lg:py-40 border-b border-primary/10"
+          className="relative w-full py-20 md:py-32 lg:py-40 border-b border-primary/10 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://i.postimg.cc/HsfgNvV0/dark-black-trendy-abstract-urban-street-art-graffiti-style-vector-illustration-background-template-2.avif')",
+          }}
         >
-          <div className="container px-4 md:px-6">
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-8">
               <div className="space-y-4">
                 <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
@@ -283,7 +287,7 @@ export default function Home() {
             </Carousel>
           </div>
         </section>
-
+        
         {/* Pricing Section */}
         <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
@@ -543,4 +547,6 @@ export default function Home() {
 }
 
     
+    
+
     
