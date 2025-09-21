@@ -225,9 +225,13 @@ export default function Home() {
         {/* Gallery Section */}
         <section
           id="gallery"
-          className="w-full py-12 md:py-24 lg:py-32 bg-card/50"
+          className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://i.postimg.cc/5NwXnztt/youngboy-never-5120x2880-13945.jpg')",
+          }}
         >
-          <div className="container px-4 md:px-6">
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
                 Nossos Trabalhos
