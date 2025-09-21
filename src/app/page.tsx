@@ -73,7 +73,7 @@ const galleryItems = [
   {
     id: "gallery-5",
     category: "Street Style",
-    title: "kkk",
+    title: "Riscos street",
     barber: "Diego Avelino",
   },
   {
@@ -330,15 +330,14 @@ export default function Home() {
                 {filteredGallery.map((item) => {
                   const image = PlaceHolderImages.find((p) => p.id === item.id);
                   return (
-                    <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/4">
+                    <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3">
                        <div className="group relative overflow-hidden rounded-lg bg-background aspect-square">
                         {image && (
                           <Image
                             src={image.imageUrl}
                             alt={item.title}
-                            width={400}
-                            height={400}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            fill
+                            className="object-cover transition-transform duration-300 group-hover:scale-105"
                             data-ai-hint={image.imageHint}
                           />
                         )}
