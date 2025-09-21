@@ -105,6 +105,18 @@ const galleryItems = [
     title: "Manutenção Dreads",
     barber: "Carlos Davi",
   },
+  {
+    id: "gallery-7",
+    category: "Street Style",
+    title: "Fade com Desenho",
+    barber: "Diego Avelino",
+  },
+  {
+    id: "gallery-8",
+    category: "Tranças",
+    title: "Trança Nagô",
+    barber: "Carlos Davi",
+  },
 ];
 
 const filterCategories = [
@@ -318,6 +330,29 @@ export default function Home() {
               ))}
             </div>
 
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {filteredGallery.map((item) => {
+                const image = PlaceHolderImages.find((p) => p.id === item.id);
+                return (
+                  <div key={item.id} className="group relative overflow-hidden rounded-lg">
+                    {image && (
+                       <Image
+                        src={image.imageUrl}
+                        alt={item.title}
+                        width={400}
+                        height={400}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        data-ai-hint={image.imageHint}
+                      />
+                    )}
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                      <h3 className="text-white text-lg font-bold">{item.title}</h3>
+                      <p className="text-white/80 text-sm">por {item.barber}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </section>
 
