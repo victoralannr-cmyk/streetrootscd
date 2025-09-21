@@ -318,35 +318,6 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-              {filteredGallery.map((item) => {
-                const image = PlaceHolderImages.find((p) => p.id === item.id);
-                return (
-                  image && (
-                    <div
-                      key={item.id}
-                      className="group relative overflow-hidden rounded-lg shadow-lg aspect-[3/4] transition-transform duration-300 hover:scale-105"
-                    >
-                      <Image
-                        src={image.imageUrl}
-                        alt={image.description}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-110"
-                        data-ai-hint={image.imageHint}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4">
-                         <div className="transition-all transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-300">
-                            <h3 className="font-headline text-lg font-bold text-white">
-                              {item.title}
-                            </h3>
-                            <p className="text-sm text-primary">{item.barber}</p>
-                         </div>
-                      </div>
-                    </div>
-                  )
-                );
-              })}
-            </div>
           </div>
         </section>
 
