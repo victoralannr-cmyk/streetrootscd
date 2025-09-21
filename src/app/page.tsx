@@ -12,7 +12,6 @@ import {
   Phone,
   Clock,
   Map,
-  Home,
   Briefcase,
 } from "lucide-react";
 import { AppHeader } from "@/components/header";
@@ -460,3 +459,5 @@ export default async function Home() {
     </div>
   );
 }
+
+    
