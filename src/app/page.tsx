@@ -65,7 +65,7 @@ const barbers = [
     whatsapp:
       "https://wa.me/558598424344?text=Olá%20Carlos,%20gostaria%20de%20agendar%20um%20corte!",
     instagram: "@carlos.davi.dreads",
-    phone: "+55 85 9842-4344",
+    phone: "",
     hours: "Seg-Sex: 9h-19h | Sáb: 9h-16h",
     mapsUrl: "#",
   },
@@ -73,7 +73,7 @@ const barbers = [
 
 const galleryItems = [
   {
-    id: "gallery-5",
+    id: "gallery-10",
     category: "Street Style",
     title: "Fade",
     barber: "Diego Avelino",
@@ -85,7 +85,7 @@ const galleryItems = [
     barber: "Carlos Davi",
   },
   {
-    id: "gallery-7",
+    id: "gallery-5",
     category: "Street Style",
     title: "Riscos street",
     barber: "Diego Avelino",
@@ -100,10 +100,10 @@ const galleryItems = [
     id: "gallery-9",
     category: "Design",
     title: "Manutenção de Dreads",
-    barber: "Diego Avelino",
+    barber: "Carlos Davi",
   },
   {
-    id: "gallery-10",
+    id: "gallery-7",
     category: "Design",
     title: "Fade",
     barber: "Diego Avelino",
@@ -472,13 +472,15 @@ export default function Home() {
                         <span>{barber.location}</span>
                       </div>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Phone className="h-6 w-6 text-primary mt-1" />
-                       <div>
-                        <p className="font-semibold text-sm text-foreground/80">Telefone</p>
-                        <span>{barber.phone}</span>
+                    {barber.phone && (
+                      <div className="flex items-start gap-3">
+                        <Phone className="h-6 w-6 text-primary mt-1" />
+                        <div>
+                          <p className="font-semibold text-sm text-foreground/80">Telefone</p>
+                          <span>{barber.phone}</span>
+                        </div>
                       </div>
-                    </div>
+                    )}
                     <div className="flex items-start gap-3">
                       <Clock className="h-6 w-6 text-primary mt-1" />
                       <div>
@@ -539,3 +541,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
