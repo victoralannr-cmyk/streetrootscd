@@ -28,6 +28,8 @@ import {
 } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { Separator } from "@/components/ui/separator";
 
 const barbers = [
   {
@@ -103,7 +105,7 @@ const galleryItems = [
   {
     id: "gallery-10",
     category: "Design",
-    title: "Riscos street",
+    title: "Fade",
     barber: "Diego Avelino",
   },
 ];
@@ -117,6 +119,23 @@ const filterCategories = [
   "Design",
   "Manutenção",
 ];
+
+const pricing = {
+  diego: [
+    { service: "Corte (Social ou Degradê)", price: "R$ 40" },
+    { service: "Barboterapia", price: "R$ 30" },
+    { service: "Corte + Barba", price: "R$ 60" },
+    { service: "Sobrancelha (Navalha ou Pinça)", price: "R$ 15" },
+    { service: "Riscos e Desenhos", price: "a partir de R$ 10" },
+  ],
+  carlos: [
+    { service: "Manutenção de Dreads", price: "R$ 100" },
+    { service: "Trança Nagô", price: "a partir de R$ 80" },
+    { service: "Twist / Tranças", price: "a partir de R$ 70" },
+    { service: "Corte Afro", price: "R$ 50" },
+    { service: "Corte Infantil", price: "R$ 35" },
+  ]
+};
 
 const InfoCard = ({
   icon: Icon,
@@ -265,10 +284,74 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Pricing Section */}
+        <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+                Tabela de Preços
+              </h2>
+              <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
+                Serviços de qualidade com preços justos. Escolha seu mestre e agende seu horário.
+              </p>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-1 md:gap-12 lg:max-w-none lg:grid-cols-2">
+              <Card className="bg-card border-border hover:border-primary/50 transition-colors">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-headline text-center">{barbers[0].name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableBody>
+                      {pricing.diego.map((item) => (
+                        <TableRow key={item.service}>
+                          <TableCell className="font-medium">{item.service}</TableCell>
+                          <TableCell className="text-right">{item.price}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </CardContent>
+                 <CardFooter className="p-6 mt-auto">
+                    <Button asChild className="w-full font-bold text-lg py-6 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-transform duration-300 hover:scale-105">
+                      <Link href={barbers[0].whatsapp} target="_blank">
+                        Agendar com {barbers[0].name.split(" ")[0]}
+                      </Link>
+                    </Button>
+                  </CardFooter>
+              </Card>
+              <Card className="bg-card border-border hover:border-accent/50 transition-colors">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-headline text-center">{barbers[1].name}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <Table>
+                    <TableBody>
+                      {pricing.carlos.map((item) => (
+                        <TableRow key={item.service}>
+                          <TableCell className="font-medium">{item.service}</TableCell>
+                          <TableCell className="text-right">{item.price}</TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </CardContent>
+                 <CardFooter className="p-6 mt-auto">
+                    <Button asChild className="w-full font-bold text-lg py-6 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 transition-transform duration-300 hover:scale-105">
+                      <Link href={barbers[1].whatsapp} target="_blank">
+                        Agendar com {barbers[1].name.split(" ")[0]}
+                      </Link>
+                    </Button>
+                  </CardFooter>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Barbers Section */}
         <section
           id="about"
-          className="w-full py-12 md:py-24 lg:py-32"
+          className="w-full py-12 md:py-24 lg:py-32 bg-card/50"
         >
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
@@ -456,14 +539,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-
-
-    
-
-
-    
