@@ -75,7 +75,7 @@ const galleryItems = [
   {
     id: "gallery-10",
     category: "Street Style",
-    title: "Riscos street",
+    title: "Fade",
     barber: "Diego Avelino",
   },
   {
@@ -87,7 +87,7 @@ const galleryItems = [
   {
     id: "gallery-5",
     category: "Street Style",
-    title: "Fade",
+    title: "Riscos street",
     barber: "Diego Avelino",
   },
   {
@@ -293,8 +293,12 @@ export default function Home() {
         </section>
         
         {/* Pricing Section */}
-        <section id="pricing" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
+        <section id="pricing" className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('https://i.postimg.cc/5NwXnztt/youngboy-never-5120x2880-13945.jpg')",
+          }}>
+           <div className="absolute inset-0 bg-black/70" />
+          <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
                 Tabela de Preços
@@ -304,7 +308,7 @@ export default function Home() {
               </p>
             </div>
             <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-1 md:gap-12 lg:max-w-none lg:grid-cols-2">
-              <Card className="bg-card border-border hover:border-primary/50 transition-colors">
+              <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-colors">
                 <CardHeader>
                   <CardTitle className="text-2xl font-headline text-center">{barbers[0].name}</CardTitle>
                 </CardHeader>
@@ -328,7 +332,7 @@ export default function Home() {
                     </Button>
                   </CardFooter>
               </Card>
-              <Card className="bg-card border-border hover:border-accent/50 transition-colors">
+              <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-accent/50 transition-colors">
                 <CardHeader>
                   <CardTitle className="text-2xl font-headline text-center">{barbers[1].name}</CardTitle>
                 </CardHeader>
