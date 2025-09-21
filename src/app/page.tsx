@@ -72,8 +72,8 @@ const barbers = [
 const galleryItems = [
   {
     id: "gallery-5",
-    category: "Design",
-    title: "Riscos streets",
+    category: "Street Style",
+    title: "Fade's",
     barber: "Diego Avelino",
   },
   {
