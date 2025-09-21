@@ -11,6 +11,9 @@ import {
   Award,
   Phone,
   Clock,
+  Map,
+  Home,
+  Briefcase,
 } from "lucide-react";
 import { AppHeader } from "@/components/header";
 import { AppFooter } from "@/components/footer";
@@ -24,6 +27,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { getInformativos, Informativos } from "@/services/firestore";
 
 const barbers = [
   {
@@ -126,8 +130,27 @@ const newBarbers = [
   },
 ];
 
+const InfoCard = ({
+  icon: Icon,
+  text,
+}: {
+  icon: React.ElementType;
+  text: string;
+}) => (
+  <div className="flex items-center gap-2">
+    <Icon className="h-5 w-5 text-primary" />
+    <span className="font-medium text-foreground/80">{text}</span>
+  </div>
+);
 
-export default function Home() {
+export default async function Home() {
+  let informativos: Informativos | null = null;
+  try {
+    informativos = await getInformativos();
+  } catch (error) {
+    console.error("Failed to fetch informativos:", error);
+  }
+
   return (
     <div className="flex min-h-dvh flex-col">
       <AppHeader />
@@ -165,6 +188,21 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {informativos && (
+          <section className="w-full py-8 bg-background border-y">
+            <div className="container px-4 md:px-6">
+              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-center">
+                <InfoCard icon={Clock} text={informativos.horario} />
+                <InfoCard icon={Map} text={informativos.localidades} />
+                <InfoCard
+                  icon={Briefcase}
+                  text={informativos.atendimento}
+                />
+              </div>
+            </div>
+          </section>
+        )}
 
         <section
           id="about"
