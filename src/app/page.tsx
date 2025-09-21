@@ -73,7 +73,7 @@ const galleryItems = [
   {
     id: "gallery-5",
     category: "Street Style",
-    title: "Riscos street",
+    title: "Fade",
     barber: "Diego Avelino",
   },
   {
@@ -85,7 +85,7 @@ const galleryItems = [
   {
     id: "gallery-7",
     category: "Street Style",
-    title: "Fade",
+    title: "Riscos street",
     barber: "Diego Avelino",
   },
   {
@@ -199,6 +199,72 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Gallery Section */}
+        <section
+          id="gallery"
+          className="w-full py-12 md:py-24 lg:py-32 bg-card/50"
+        >
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+                Nossos Trabalhos
+              </h2>
+              <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
+                Cada corte é uma transformação. Veja o antes e depois da
+                confiança.
+              </p>
+            </div>
+
+            <div className="flex justify-center flex-wrap gap-2 mb-8">
+              {filterCategories.map((category) => (
+                <Button
+                  key={category}
+                  variant={activeFilter === category ? "default" : "secondary"}
+                  onClick={() => setActiveFilter(category)}
+                  className={`font-semibold rounded-full px-4 py-2 text-sm transition-colors ${activeFilter === category ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'}`}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {filteredGallery.map((item) => {
+                  const image = PlaceHolderImages.find((p) => p.id === item.id);
+                  return (
+                    <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3">
+                       <div className="group relative overflow-hidden rounded-lg bg-background aspect-square">
+                        {image && (
+                          <Image
+                            src={image.imageUrl}
+                            alt={item.title}
+                            fill
+                            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
+                            data-ai-hint={image.imageHint}
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                          <h3 className="text-white text-lg font-bold">{item.title}</h3>
+                          <p className="text-white/80 text-sm">por {item.barber}</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+            </Carousel>
+          </div>
+        </section>
+
         {/* Barbers Section */}
         <section
           id="about"
@@ -287,72 +353,6 @@ export default function Home() {
                 </Card>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Gallery Section */}
-        <section
-          id="gallery"
-          className="w-full py-12 md:py-24 lg:py-32 bg-card/50"
-        >
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                Nossos Trabalhos
-              </h2>
-              <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
-                Cada corte é uma transformação. Veja o antes e depois da
-                confiança.
-              </p>
-            </div>
-
-            <div className="flex justify-center flex-wrap gap-2 mb-8">
-              {filterCategories.map((category) => (
-                <Button
-                  key={category}
-                  variant={activeFilter === category ? "default" : "secondary"}
-                  onClick={() => setActiveFilter(category)}
-                  className={`font-semibold rounded-full px-4 py-2 text-sm transition-colors ${activeFilter === category ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'}`}
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              className="w-full"
-            >
-              <CarouselContent>
-                {filteredGallery.map((item) => {
-                  const image = PlaceHolderImages.find((p) => p.id === item.id);
-                  return (
-                    <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3">
-                       <div className="group relative overflow-hidden rounded-lg bg-background aspect-square">
-                        {image && (
-                          <Image
-                            src={image.imageUrl}
-                            alt={item.title}
-                            fill
-                            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
-                            data-ai-hint={image.imageHint}
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                          <h3 className="text-white text-lg font-bold">{item.title}</h3>
-                          <p className="text-white/80 text-sm">por {item.barber}</p>
-                        </div>
-                      </div>
-                    </CarouselItem>
-                  );
-                })}
-              </CarouselContent>
-              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
-              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
-            </Carousel>
           </div>
         </section>
 
@@ -461,6 +461,9 @@ export default function Home() {
 
     
 
+
+
+    
 
 
     
