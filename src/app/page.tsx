@@ -49,7 +49,7 @@ const barbers = [
     whatsapp:
       "https://wa.me/5511999999991?text=Olá%20Diego,%20gostaria%20de%20agendar%20um%20corte!",
     instagram: "@diego.avelino.barber",
-    phone: "(11) 99999-9999",
+    phone: "",
     hours: "Seg-Sex: 8h-19h | Sáb: 8h-17h",
     mapsUrl: "#",
   },
@@ -87,7 +87,7 @@ const galleryItems = [
   {
     id: "gallery-5",
     category: "Street Style",
-    title: "Riscos street",
+    title: "Fade",
     barber: "Diego Avelino",
   },
   {
@@ -105,7 +105,7 @@ const galleryItems = [
   {
     id: "gallery-7",
     category: "Design",
-    title: "Fade",
+    title: "Riscos street",
     barber: "Diego Avelino",
   },
 ];
@@ -542,4 +542,5 @@ export default function Home() {
   );
 }
 
+    
     
