@@ -329,7 +329,7 @@ export default function Home() {
               <CarouselContent>
                 {filteredGallery.map((item) => {
                   const image = PlaceHolderImages.find((p) => p.id === item.id);
-                  const isContained = ['gallery-7', 'gallery-5', 'gallery-9', 'gallery-10', 'gallery-6', 'gallery-8'].includes(item.id);
+                  const isContained = ['gallery-7', 'gallery-5', 'gallery-9', 'gallery-10', 'gallery-6'].includes(item.id);
                   return (
                     <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/4">
                        <div className="group relative overflow-hidden rounded-lg bg-background">
@@ -463,3 +463,6 @@ export default function Home() {
 
     
 
+
+
+    
