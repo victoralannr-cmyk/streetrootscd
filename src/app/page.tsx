@@ -73,7 +73,7 @@ const galleryItems = [
   {
     id: "gallery-5",
     category: "Street Style",
-    title: "Fade's",
+    title: "kkk",
     barber: "Diego Avelino",
   },
   {
@@ -458,5 +458,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
