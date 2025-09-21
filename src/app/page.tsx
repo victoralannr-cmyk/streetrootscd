@@ -27,6 +27,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const barbers = [
   {
@@ -318,29 +319,41 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-              {filteredGallery.map((item) => {
-                const image = PlaceHolderImages.find((p) => p.id === item.id);
-                return (
-                  <div key={item.id} className="group relative overflow-hidden rounded-lg">
-                    {image && (
-                       <Image
-                        src={image.imageUrl}
-                        alt={item.title}
-                        width={400}
-                        height={400}
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                        data-ai-hint={image.imageHint}
-                      />
-                    )}
-                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                      <h3 className="text-white text-lg font-bold">{item.title}</h3>
-                      <p className="text-white/80 text-sm">por {item.barber}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {filteredGallery.map((item) => {
+                  const image = PlaceHolderImages.find((p) => p.id === item.id);
+                  return (
+                    <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/4">
+                       <div className="group relative overflow-hidden rounded-lg">
+                        {image && (
+                          <Image
+                            src={image.imageUrl}
+                            alt={item.title}
+                            width={400}
+                            height={400}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                            data-ai-hint={image.imageHint}
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                          <h3 className="text-white text-lg font-bold">{item.title}</h3>
+                          <p className="text-white/80 text-sm">por {item.barber}</p>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+            </Carousel>
           </div>
         </section>
 
@@ -444,5 +457,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
