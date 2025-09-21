@@ -85,7 +85,7 @@ const galleryItems = [
   {
     id: "gallery-7",
     category: "Street Style",
-    title: "Fade com Desenho",
+    title: "Fade",
     barber: "Diego Avelino",
   },
   {
@@ -103,7 +103,7 @@ const galleryItems = [
   {
     id: "gallery-10",
     category: "Design",
-    title: "Fade",
+    title: "Riscos street",
     barber: "Diego Avelino",
   },
 ];
@@ -337,7 +337,7 @@ export default function Home() {
                             src={image.imageUrl}
                             alt={item.title}
                             fill
-                            className="object-cover transition-transform duration-300 group-hover:scale-105"
+                            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105"
                             data-ai-hint={image.imageHint}
                           />
                         )}
@@ -412,7 +412,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
-                    <Button asChild className="w-full font-bold text-lg py-6 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_0_15px_rgba(255,215,0,0.4)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(76,175,80,0.6)] hover:scale-105">
+                    <Button asChild className="w-full font-bold text-lg py-6 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_0_15px_rgba(210,26,11,0.4)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(76,175,80,0.6)] hover:scale-105">
                       <Link href={barber.whatsapp} target="_blank">
                         Falar com {barber.name.split(" ")[0]}
                       </Link>
