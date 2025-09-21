@@ -70,30 +70,6 @@ const barbers = [
 
 const galleryItems = [
   {
-    id: "gallery-1",
-    category: "Street Style",
-    title: "Fade Moderno",
-    barber: "Diego Avelino",
-  },
-  {
-    id: "gallery-2",
-    category: "Dreadlocks",
-    title: "Dreadlocks Premium",
-    barber: "Carlos Davi",
-  },
-  {
-    id: "gallery-3",
-    category: "Tranças",
-    title: "Tranças Artísticas",
-    barber: "Carlos Davi",
-  },
-  {
-    id: "gallery-4",
-    category: "Urban Cut",
-    title: "Corte Urbano",
-    barber: "Diego Avelino",
-  },
-  {
     id: "gallery-5",
     category: "Design",
     title: "Riscos streets",
