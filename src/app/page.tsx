@@ -295,7 +295,7 @@ export default function Home() {
         {/* Pricing Section */}
         <section id="pricing" className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/pXkcMTWJ/2c7d18559ee68b186dbab62e9b03639b.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/NjncYbsD/569a3a1034dbe22073d4e73407320e4f.jpg')",
           }}>
            <div className="absolute inset-0 bg-black/70" />
           <div className="container relative px-4 md:px-6">
