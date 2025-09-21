@@ -329,17 +329,16 @@ export default function Home() {
               <CarouselContent>
                 {filteredGallery.map((item) => {
                   const image = PlaceHolderImages.find((p) => p.id === item.id);
-                  const isContained = ['gallery-7', 'gallery-5', 'gallery-9', 'gallery-10', 'gallery-6'].includes(item.id);
                   return (
                     <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/4">
-                       <div className="group relative overflow-hidden rounded-lg bg-background">
+                       <div className="group relative overflow-hidden rounded-lg bg-background aspect-square">
                         {image && (
                           <Image
                             src={image.imageUrl}
                             alt={item.title}
                             width={400}
                             height={400}
-                            className={`w-full h-full transition-transform duration-300 group-hover:scale-105 ${isContained ? 'object-contain' : 'object-cover'}`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                             data-ai-hint={image.imageHint}
                           />
                         )}
