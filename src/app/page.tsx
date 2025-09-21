@@ -79,9 +79,9 @@ const galleryItems = [
     barber: "Diego Avelino",
   },
   {
-    id: "gallery-6",
-    category: "Manutenção",
-    title: "Twist / Tranças",
+    id: "gallery-9",
+    category: "Design",
+    title: "Manutenção de Dreads",
     barber: "Carlos Davi",
   },
   {
@@ -97,9 +97,9 @@ const galleryItems = [
     barber: "Carlos Davi",
   },
    {
-    id: "gallery-9",
-    category: "Design",
-    title: "Manutenção de Dreads",
+    id: "gallery-6",
+    category: "Manutenção",
+    title: "Twist / Tranças",
     barber: "Carlos Davi",
   },
   {
@@ -526,30 +526,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 bg-card/50">
-           <div className="container px-4 md:px-6">
-             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">
-                  Pronto para transformar seu visual?
-                </h2>
-                <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed">
-                  Não perca tempo! Nossos barbeiros estão prontos para criar o look perfeito para você. Agende agora e garante seu horário.
-                </p>
-                <div className="flex flex-col gap-4 min-[400px]:flex-row pt-4">
-                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 shadow-lg shadow-primary/20 transition-transform duration-300 hover:scale-105">
-                    <Link href={barbers[0].whatsapp} target="_blank">Falar com Diego</Link>
-                  </Button>
-                  <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-6 shadow-lg shadow-accent/20 transition-transform duration-300 hover:scale-105">
-                    <Link href={barbers[1].whatsapp} target="_blank">Falar com Carlos</Link>
-                  </Button>
-              </div>
-            </div>
-           </div>
-        </section>
-
       </main>
       <AppFooter barbers={barbers} />
     </div>
   );
 }
+
+    
