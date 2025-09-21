@@ -75,13 +75,13 @@ const galleryItems = [
   {
     id: "gallery-9",
     category: "Street Style",
-    title: "Fade",
+    title: "Manuteção",
     barber: "Diego Avelino",
   },
   {
     id: "gallery-10",
     category: "Design",
-    title: "Manutenção de Dreads",
+    title: "Fade",
     barber: "Carlos Davi",
   },
   {
@@ -105,7 +105,7 @@ const galleryItems = [
   {
     id: "gallery-7",
     category: "Design",
-    title: "Fade",
+    title: "Manuteção",
     barber: "Diego Avelino",
   },
 ];
