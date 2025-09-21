@@ -7,9 +7,8 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
-  { href: "#about", label: "Sobre" },
-  { href: "#services", label: "Serviços" },
-  { href: "#gallery", label: "Galeria" },
+  { href: "#about", label: "Mestres" },
+  { href: "#gallery", label: "Trabalhos" },
   { href: "#contact", label: "Contato" },
 ];
 
@@ -18,94 +17,58 @@ const logoUrl = "https://i.postimg.cc/T1pnh9v9/550494427-24780280111639226-15728
 export function AppHeader() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 max-w-screen-2xl items-center justify-between">
-        {/* Left Section */}
-        <nav className="hidden gap-6 md:flex">
-          {navLinks.slice(0, 2).map((link) => (
+      <div className="container flex h-20 max-w-screen-2xl items-center justify-between px-4 md:px-6">
+        <Link href="/" className="flex items-center space-x-2">
+          <Image
+            src={logoUrl}
+            alt="Street Roots Logo"
+            width={160}
+            height={60}
+            className="object-contain"
+          />
+        </Link>
+        
+        <nav className="hidden md:flex gap-6 items-center">
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground/80"
+              className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
           ))}
+           <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md shadow-primary/20 transition-transform duration-300 hover:scale-105">
+              <Link href="#contact">Agendar Horário</Link>
+            </Button>
         </nav>
 
-        {/* Center Section (Logo) */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <Link href="/" className="flex items-center space-x-2">
-            <Image
-              src={logoUrl}
-              alt="Street Roots Logo"
-              width={160}
-              height={60}
-              className="object-contain"
-            />
-          </Link>
-        </div>
-
-        {/* Right Section */}
-        <div className="flex items-center justify-end space-x-2">
-          <nav className="hidden gap-6 md:flex items-center">
-            {navLinks.slice(2).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/60 transition-colors hover:text-foreground/80"
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link href="#contact">
-              <Button className="bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity">
-                Agendar Agora
+        {/* Mobile Menu */}
+        <div className="md:hidden">
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Menu className="h-6 w-6" />
+                <span className="sr-only">Toggle Menu</span>
               </Button>
-            </Link>
-          </nav>
-          
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-5 w-5" />
-                  <span className="sr-only">Toggle Menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-full max-w-xs">
-                <nav className="grid gap-6 text-lg font-medium mt-8">
+            </SheetTrigger>
+            <SheetContent side="right" className="w-full max-w-xs bg-card">
+              <nav className="grid gap-6 text-lg font-medium mt-16 text-center">
+                {navLinks.map((link) => (
                   <Link
-                    href="/"
-                    className="flex items-center justify-center gap-2 text-lg font-semibold"
+                    key={link.href}
+                    href={link.href}
+                    className="text-muted-foreground hover:text-foreground"
                   >
-                     <Image
-                        src={logoUrl}
-                        alt="Street Roots Logo"
-                        width={160}
-                        height={60}
-                        className="object-contain"
-                      />
-                    <span className="sr-only">Street Roots</span>
+                    {link.label}
                   </Link>
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.href}
-                      href={link.href}
-                      className="text-muted-foreground hover:text-foreground"
-                    >
-                      {link.label}
-                    </Link>
-                  ))}
-                   <Link href="#contact">
-                    <Button className="w-full bg-gradient-to-r from-primary to-accent text-primary-foreground hover:opacity-90 transition-opacity">
-                      Agendar Agora
-                    </Button>
-                  </Link>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+                ))}
+                <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md shadow-primary/20">
+                  <Link href="#contact">Agendar Horário</Link>
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

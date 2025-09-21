@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Street Roots",
   description:
-    "Barbearia premium com Diego Avelino e Carlos Davi. Agende seu corte e sinta a diferença.",
+    "Dois mestres, duas especialidades. Mesmo padrão: excelência de verdade. Agende seu corte com Diego Avelino ou Carlos Davi.",
 };
 
 export default function RootLayout({
@@ -23,17 +24,14 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="font-body bg-background text-foreground antialiased">
         {children}
         <Toaster />
+        <Analytics />
       </body>
     </html>
   );

@@ -14,45 +14,39 @@
     },
     {
       "id": "gallery-1",
-      "description": "Corte navalhado com precisão.",
-      "imageUrl": "https://i.postimg.cc/TwqDk3nZ/Captura-de-tela-2025-09-18-220716.png",
-      "imageHint": "razor fade"
+      "description": "Fade moderno.",
+      "imageUrl": "https://i.postimg.cc/6p2ncgnr/Captura-de-tela-2025-09-21-001404.png",
+      "imageHint": "modern fade"
     },
     {
       "id": "gallery-2",
-      "description": "A creative hair design.",
-      "imageUrl": "https://i.postimg.cc/sgYsGGyd/Captura-de-tela-2025-09-18-221237.png",
-      "imageHint": "hair design"
+      "description": "Dreadlocks premium.",
+      "imageUrl": "https://i.postimg.cc/tT5x7jGj/Captura-de-tela-2025-09-21-001417.png",
+      "imageHint": "premium dreadlocks"
     },
     {
       "id": "gallery-3",
-      "description": "Clean dreadlocks.",
-      "imageUrl": "https://i.postimg.cc/brVdMDrF/Captura-de-tela-2025-09-18-221312.png",
-      "imageHint": "dreadlocks hair"
+      "description": "Tranças artísticas",
+      "imageUrl": "https://i.postimg.cc/qMYCNwSz/Captura-de-tela-2025-09-21-001434.png",
+      "imageHint": "artistic braids"
     },
     {
       "id": "gallery-4",
-      "description": "Sharp freestyle cut.",
-      "imageUrl": "https://i.postimg.cc/NGzKnLdT/Captura-de-tela-2025-09-18-221039.png",
-      "imageHint": "freestyle haircut"
+      "description": "Corte urbano.",
+      "imageUrl": "https://i.postimg.cc/nVSXWTH0/Captura-de-tela-2025-09-21-001444.png",
+      "imageHint": "urban cut"
     },
     {
       "id": "gallery-5",
-      "description": "Detailed braids.",
-      "imageUrl": "https://picsum.photos/seed/g5/600/800",
-      "imageHint": "braids hair"
+      "description": "Riscos streets.",
+      "imageUrl": "https://i.postimg.cc/NGzKnLdT/Captura-de-tela-2025-09-18-221039.png",
+      "imageHint": "street design"
     },
     {
       "id": "gallery-6",
-      "description": "A premium street style haircut.",
-      "imageUrl": "https://picsum.photos/seed/g6/600/800",
-      "imageHint": "street haircut"
-    },
-    {
-      "id": "map-placeholder",
-      "description": "A dark themed map of the barbershop location.",
-      "imageUrl": "https://picsum.photos/seed/map/1200/400",
-      "imageHint": "dark map"
+      "description": "Manutenção de dreads.",
+      "imageUrl": "https://i.postimg.cc/tCV4Mjv4/Captura-de-tela-2025-09-21-001505.png",
+      "imageHint": "dreadlocks maintenance"
     }
   ]
 }

@@ -1,18 +1,19 @@
 
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import {
   Instagram,
-  MessageCircle,
   Star,
   MapPin,
-  Scissors,
-  Sparkles,
+  Clock,
+  Briefcase,
+  Users,
   Award,
   Phone,
-  Clock,
-  Map,
-  Briefcase,
+  Scissors,
 } from "lucide-react";
 import { AppHeader } from "@/components/header";
 import { AppFooter } from "@/components/footer";
@@ -26,7 +27,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-
 
 const barbers = [
   {
@@ -45,88 +45,76 @@ const barbers = [
     image: PlaceHolderImages.find((p) => p.id === "diego-profile"),
     whatsapp:
       "https://wa.me/5511999999991?text=Olá%20Diego,%20gostaria%20de%20agendar%20um%20corte!",
-    theme: {
-      card: "border-primary/50",
-      button: "bg-primary text-primary-foreground hover:bg-primary/90",
-      title: "text-primary",
-    },
+    instagram: "@diego.avelino.barber",
+    phone: "(11) 99999-9999",
+    hours: "Seg-Sex: 8h-19h | Sáb: 8h-17h",
+    mapsUrl: "#",
   },
   {
     name: "Carlos Davi",
-    title: "Vibe Tropical Specialist",
-    rating: 4.9,
-    specialties: ["Tranças Nagô", "Dreadlocks", "Penteados Afro"],
-    bio: "Com uma energia contagiante, Carlos é o especialista em tranças e dreadlocks. Sua vibe tropical se reflete em penteados cheios de estilo e personalidade, perfeitos para quem quer se destacar.",
-    experience: "4+ anos de experiência",
-    location: "Don Fragoso Q28 L05",
+    title: "Cortes, Tranças & Dreadlocks",
+    rating: 5.0,
+    specialties: ["Dreadlocks", "Tranças", "Cortes Afro", "Manutenção"],
+    bio: "Carlos Davi é mestre em tranças e dreadlocks. Um expert que respeita a cultura e eleva cada detalhe do seu estilo. Suas mãos criam arte capilar que conta sua história com autenticidade.",
+    experience: "3+ anos de experiência",
+    location: "R. Jose Regino 475 - Venâncios",
     image: PlaceHolderImages.find((p) => p.id === "carlos-profile"),
     whatsapp:
-      "https://wa.me/5511999999992?text=Olá%20Carlos,%20gostaria%20de%20agendar%20um%20corte!",
-    theme: {
-      card: "border-accent/50",
-      button: "bg-accent text-accent-foreground hover:bg-accent/90",
-      title: "text-accent",
-    },
-  },
-];
-
-const services = [
-  {
-    icon: Scissors,
-    name: "Corte Social",
-    description: "Alinhamento, estilo e elegância.",
-    price: "R$ 40",
-  },
-  {
-    icon: Sparkles,
-    name: "Corte + Barba",
-    description: "Visual completo com acabamento impecável.",
-    price: "R$ 65",
-  },
-  {
-    icon: Award,
-    name: "Corte + Sobrancelha",
-    description: "Realce seu olhar com um design profissional.",
-    price: "R$ 55",
-  },
-];
-
-const galleryImages = PlaceHolderImages.filter((p) =>
-  p.id.startsWith("gallery-")
-).slice(0, 6);
-const galleryCaptions = [
-  "Corte Navalhado",
-  "Freestyle Art",
-  "Dreads Alinhados",
-  "Desenho Personalizado",
-  "Trança Nagô",
-  "Degradê Perfeito",
-];
-
-const mapImage = PlaceHolderImages.find((p) => p.id === "map-placeholder");
-const heroImage = PlaceHolderImages.find((p) => p.id === "diego-profile");
-
-const newBarbers = [
-  {
-    name: "Diego Avelino",
-    subtitle: "Street Style Specialist",
-    address: "Rua da Barbearia, 123 - Centro",
-    phone: "(11) 98765-4321",
-    hours: "Seg à Sáb, 9h - 20h",
-    instagram: "@diego.streetroots",
+      "https://wa.me/558598424344?text=Olá%20Carlos,%20gostaria%20de%20agendar%20um%20corte!",
+    instagram: "@carlos.davi.dreads",
+    phone: "+55 85 9842-4344",
+    hours: "Seg-Sex: 9h-19h | Sáb: 9h-16h",
     mapsUrl: "#",
-    whatsappUrl: "https://wa.me/5511987654321",
+  },
+];
+
+const galleryItems = [
+  {
+    id: "gallery-1",
+    category: "Street Style",
+    title: "Fade Moderno",
+    barber: "Diego Avelino",
   },
   {
-    name: "Carlos Davi",
-    subtitle: "Cortes, Tranças & Dreadlocks",
-    address: "Rua da Barbearia, 123 - Centro",
-    phone: "(11) 91234-5678",
-    hours: "Seg à Sáb, 9h - 20h",
-    instagram: "@carlos.streetroots",
-    mapsUrl: "#",
-    whatsappUrl: "https://wa.me/5511912345678",
+    id: "gallery-2",
+    category: "Dreadlocks",
+    title: "Dreadlocks Premium",
+    barber: "Carlos Davi",
   },
+  {
+    id: "gallery-3",
+    category: "Tranças",
+    title: "Tranças Artísticas",
+    barber: "Carlos Davi",
+  },
+  {
+    id: "gallery-4",
+    category: "Urban Cut",
+    title: "Corte Urbano",
+    barber: "Diego Avelino",
+  },
+  {
+    id: "gallery-5",
+    category: "Design",
+    title: "Riscos streets",
+    barber: "Diego Avelino",
+  },
+  {
+    id: "gallery-6",
+    category: "Manutenção",
+    title: "Manutenção Dreads",
+    barber: "Carlos Davi",
+  },
+];
+
+const filterCategories = [
+  "Todos",
+  "Street Style",
+  "Dreadlocks",
+  "Tranças",
+  "Urban Cut",
+  "Design",
+  "Manutenção",
 ];
 
 const InfoCard = ({
@@ -137,86 +125,101 @@ const InfoCard = ({
   text: string;
 }) => (
   <div className="flex items-center gap-2">
-    <Icon className="h-5 w-5 text-primary" />
-    <span className="font-medium text-foreground/80">{text}</span>
+    <Icon className="h-4 w-4 text-primary" />
+    <span className="text-sm font-medium text-foreground/80">{text}</span>
   </div>
 );
 
-export default async function Home() {
-  const informativos = {
-    horario: "Seg - Sáb: 8h às 19h",
-    localidades: "Duas Localidades",
-    atendimento: "Atendimento a Domicílio",
-  };
+export default function Home() {
+  const [activeFilter, setActiveFilter] = useState("Todos");
+
+  const filteredGallery =
+    activeFilter === "Todos"
+      ? galleryItems
+      : galleryItems.filter((item) => item.category === activeFilter);
 
   return (
-    <div className="flex min-h-dvh flex-col">
+    <div className="flex min-h-dvh flex-col bg-background">
       <AppHeader />
       <main className="flex-1">
+        {/* Hero Section */}
         <section
           id="home"
-          className="w-full py-12 md:py-24 lg:py-32 bg-background"
+          className="w-full py-20 md:py-32 lg:py-40 border-b border-primary/10"
         >
           <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-1">
-              <div className="flex flex-col justify-center items-center text-center space-y-4">
-                <div className="space-y-2">
-                  <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Onde o estilo de rua encontra a navalha.
-                  </h1>
-                  <p className="max-w-[600px] text-foreground/80 md:text-xl">
-                    Aqui não é só corte, é estilo de vida. Você sai diferente, mais você mesmo. Diego e Carlos: dois mestres que vivem o que fazem.
-                  </p>
+            <div className="flex flex-col items-center text-center space-y-8">
+              <div className="space-y-4">
+                <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
+                  A experiência certa muda sua vida.
+                </h1>
+                <p className="max-w-[700px] mx-auto text-foreground/80 md:text-xl">
+                  Aqui não é só corte, é estilo de vida. Você sai diferente,
+                  mais você mesmo. Diego e Carlos: dois mestres que vivem o que
+                  fazem.
+                </p>
+              </div>
+
+              <div className="w-full max-w-4xl mx-auto border-t border-border pt-8">
+                <div className="grid grid-cols-2 sm:grid-cols-3 justify-items-center gap-y-6 gap-x-4 text-center">
+                  <InfoCard icon={Clock} text="Seg - Sáb: 8h às 19h" />
+                  <InfoCard icon={MapPin} text="Duas Localidades" />
+                  <InfoCard icon={Briefcase} text="Atendimento a Domicílio" />
+                  <div className="flex items-center gap-2">
+                    <Users className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium text-foreground/80">
+                      +500 clientes satisfeitos
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <Star className="h-4 w-4 text-primary fill-primary" />
+                    <span className="text-sm font-medium text-foreground/80">
+                      4.9 avaliação
+                    </span>
+                  </div>
+                   <div className="flex items-center gap-2">
+                    <Scissors className="h-4 w-4 text-primary" />
+                    <span className="text-sm font-medium text-foreground/80">
+                      Cortes & Stylist
+                    </span>
+                  </div>
                 </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Link
-                    href={barbers[0].whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button
-                      size="lg"
-                      className="font-bold text-lg px-8 py-6 bg-primary text-primary-foreground shadow-lg transition-transform duration-300 hover:scale-105 w-full sm:w-auto"
-                    >
-                      Agendar Agora
-                    </Button>
-                  </Link>
-                </div>
+              </div>
+
+              <div className="flex flex-col gap-4 min-[400px]:flex-row">
+                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 shadow-lg shadow-primary/20 transition-transform duration-300 hover:scale-105">
+                  <Link href={barbers[0].whatsapp} target="_blank">Agendar com Diego</Link>
+                </Button>
+                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-6 shadow-lg shadow-accent/20 transition-transform duration-300 hover:scale-105">
+                  <Link href={barbers[1].whatsapp} target="_blank">Agendar com Carlos</Link>
+                </Button>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="w-full py-8 bg-background border-y">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-center">
-              <InfoCard icon={Clock} text={informativos.horario} />
-              <InfoCard icon={Map} text={informativos.localidades} />
-              <InfoCard icon={Briefcase} text={informativos.atendimento} />
-            </div>
-          </div>
-        </section>
-
+        {/* Barbers Section */}
         <section
           id="about"
-          className="w-full py-12 md:py-24 lg:py-32 bg-background"
+          className="w-full py-12 md:py-24 lg:py-32"
         >
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                  Conheça Nossos Artistas
+                  Nossos Mestres
                 </h2>
-                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Dois mestres, um objetivo: elevar seu estilo ao próximo nível.
+                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
+                  Dois experts, duas especialidades. Mesmo padrão: excelência de
+                  verdade.
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-2 mt-12">
+            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-1 md:gap-12 lg:max-w-none lg:grid-cols-2">
               {barbers.map((barber) => (
                 <Card
                   key={barber.name}
-                  className={`bg-card flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 ${barber.theme.card}`}
+                  className="bg-card flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-border hover:border-primary/50"
                 >
                   <CardHeader className="p-0">
                     <div className="relative">
@@ -224,13 +227,13 @@ export default async function Home() {
                         <Image
                           src={barber.image.imageUrl}
                           alt={`Foto de ${barber.name}`}
-                          width={400}
-                          height={400}
+                          width={600}
+                          height={600}
                           className="w-full rounded-t-lg object-cover aspect-square"
                           data-ai-hint={barber.image.imageHint}
                         />
                       )}
-                      <div className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full bg-background/80 px-2 py-1 text-xs font-bold backdrop-blur-sm">
+                      <div className="absolute top-4 right-4 flex items-center gap-1 rounded-full bg-background/80 px-3 py-1.5 text-sm font-bold backdrop-blur-sm border border-primary/50">
                         <Star className="h-4 w-4 fill-primary text-primary" />
                         <span>{barber.rating.toFixed(1)}</span>
                       </div>
@@ -238,21 +241,19 @@ export default async function Home() {
                   </CardHeader>
                   <CardContent className="flex flex-col flex-1 p-6 space-y-4">
                     <div className="space-y-1">
-                      <CardTitle className="text-2xl font-bold font-headline">
+                      <CardTitle className="text-3xl font-bold font-headline">
                         {barber.name}
                       </CardTitle>
-                      <p
-                        className={`font-semibold ${barber.theme.title}`}
-                      >
+                      <p className="font-semibold text-primary">
                         {barber.title}
                       </p>
                     </div>
                     <p className="text-foreground/90 text-sm flex-1">
                       {barber.bio}
                     </p>
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       <div>
-                        <h4 className="text-sm font-semibold mb-2">
+                        <h4 className="text-sm font-semibold mb-2 text-foreground/80">
                           Especialidades:
                         </h4>
                         <div className="flex flex-wrap gap-2">
@@ -263,9 +264,9 @@ export default async function Home() {
                           ))}
                         </div>
                       </div>
-                      <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
                         <div className="flex items-center gap-1.5">
-                          <Star className="h-4 w-4" />
+                          <Award className="h-4 w-4" />
                           <span>{barber.experience}</span>
                         </div>
                         <div className="flex items-center gap-1.5">
@@ -275,17 +276,9 @@ export default async function Home() {
                       </div>
                     </div>
                   </CardContent>
-                  <CardFooter className="p-6">
-                    <Button
-                      asChild
-                      className={`w-full font-bold text-lg py-6 ${barber.theme.button}`}
-                    >
-                      <Link
-                        href={barber.whatsapp}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <MessageCircle className="h-5 w-5 mr-2" />
+                  <CardFooter className="p-6 mt-auto">
+                    <Button asChild className="w-full font-bold text-lg py-6 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-transform duration-300 hover:scale-105">
+                      <Link href={barber.whatsapp} target="_blank">
                         Agendar com {barber.name.split(" ")[0]}
                       </Link>
                     </Button>
@@ -296,148 +289,129 @@ export default async function Home() {
           </div>
         </section>
 
+        {/* Gallery Section */}
         <section
           id="gallery"
-          className="w-full py-12 md:py-24 lg:py-32 bg-background/95"
+          className="w-full py-12 md:py-24 lg:py-32 bg-card/50"
         >
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-accent">
-                  Nossa Galeria
-                </h2>
-                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Confira alguns dos nossos trabalhos. Cada corte conta uma
-                  história.
-                </p>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 lg:gap-6 mt-12">
-              {galleryImages.map((image, index) => (
-                <div
-                  key={image.id}
-                  className="group relative overflow-hidden rounded-lg shadow-lg aspect-[3/4] transition-transform duration-300 hover:scale-105"
-                >
-                  <Image
-                    src={image.imageUrl}
-                    alt={image.description}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    data-ai-hint={image.imageHint}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end justify-center p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <p className="text-primary-foreground font-bold text-lg text-center font-headline">
-                      {galleryCaptions[index]}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-        
-        <section
-          id="services"
-          className="w-full py-12 md:py-24 lg:py-32 bg-background/95"
-        >
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                  Nossos Serviços
-                </h2>
-                <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Oferecemos uma variedade de serviços para realçar o seu
-                  estilo.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:max-w-none lg:grid-cols-3 mt-12">
-              {services.map((service) => (
-                <Card
-                  key={service.name}
-                  className="bg-card flex flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:shadow-2xl hover:-translate-y-2"
-                >
-                  <CardHeader>
-                    <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
-                      <service.icon className="h-8 w-8" />
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-2">
-                    <CardTitle>{service.name}</CardTitle>
-                    <p className="text-muted-foreground">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <p className="text-lg font-bold">{service.price}</p>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid items-center justify-center gap-8 px-4 md:px-6">
-            <div className="space-y-3 text-center">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight font-headline">
-                Aqui não é só corte, é estilo de vida.
+            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+                Nossos Trabalhos
               </h2>
-              <p className="mx-auto max-w-[600px] text-foreground/80 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Você sai diferente, mais você mesmo. Diego e Carlos: dois mestres que vivem o que fazem. Venham conchecer nosso trabalho e chama no Wats.
+              <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
+                Cada corte é uma transformação. Veja o antes e depois da
+                confiança.
               </p>
             </div>
+
+            <div className="flex justify-center flex-wrap gap-2 mb-8">
+              {filterCategories.map((category) => (
+                <Button
+                  key={category}
+                  variant={activeFilter === category ? "default" : "secondary"}
+                  onClick={() => setActiveFilter(category)}
+                  className={`font-semibold rounded-full px-4 py-2 text-sm transition-colors ${activeFilter === category ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'}`}
+                >
+                  {category}
+                </Button>
+              ))}
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {filteredGallery.map((item) => {
+                const image = PlaceHolderImages.find((p) => p.id === item.id);
+                return (
+                  image && (
+                    <div
+                      key={item.id}
+                      className="group relative overflow-hidden rounded-lg shadow-lg aspect-[3/4] transition-transform duration-300 hover:scale-105"
+                    >
+                      <Image
+                        src={image.imageUrl}
+                        alt={image.description}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-110"
+                        data-ai-hint={image.imageHint}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-4">
+                         <div className="transition-all transform translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-300">
+                            <h3 className="font-headline text-lg font-bold text-white">
+                              {item.title}
+                            </h3>
+                            <p className="text-sm text-primary">{item.barber}</p>
+                         </div>
+                      </div>
+                    </div>
+                  )
+                );
+              })}
+            </div>
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-900 text-white">
+        {/* Contact Section */}
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-12 md:grid-cols-2">
-              {newBarbers.map((barber) => (
+             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
+                Quer transformar seu visual?
+              </h2>
+              <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
+                Chama no Whats! Duas localidades, mesmo padrão de excelência.
+              </p>
+            </div>
+            <div className="grid gap-10 md:grid-cols-2">
+              {barbers.map((barber) => (
                 <div
                   key={barber.name}
-                  className="bg-gray-800/50 border border-yellow-400/20 rounded-2xl p-6 flex flex-col gap-4"
+                  className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-4"
                 >
                   <div className="text-center">
-                    <h3 className="text-3xl font-bold font-headline text-yellow-400">
+                    <h3 className="text-3xl font-bold font-headline text-primary">
                       {barber.name}
                     </h3>
-                    <p className="font-semibold text-green-400">
-                      {barber.subtitle}
+                    <p className="font-semibold text-accent">
+                      {barber.title}
                     </p>
                   </div>
-                  <div className="space-y-3 text-lg">
-                    <div className="flex items-center gap-3">
-                      <MapPin className="h-6 w-6 text-yellow-400" />
-                      <span>{barber.address}</span>
+                  <div className="space-y-3 text-lg mt-4">
+                    <div className="flex items-start gap-3">
+                      <MapPin className="h-6 w-6 text-primary mt-1" />
+                      <div>
+                        <p className="font-semibold text-sm text-foreground/80">Endereço</p>
+                        <span>{barber.location}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Phone className="h-6 w-6 text-yellow-400" />
-                      <span>{barber.phone}</span>
+                    <div className="flex items-start gap-3">
+                      <Phone className="h-6 w-6 text-primary mt-1" />
+                       <div>
+                        <p className="font-semibold text-sm text-foreground/80">Telefone</p>
+                        <span>{barber.phone}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="h-6 w-6 text-yellow-400" />
-                      <span>{barber.hours}</span>
+                    <div className="flex items-start gap-3">
+                      <Clock className="h-6 w-6 text-primary mt-1" />
+                      <div>
+                        <p className="font-semibold text-sm text-foreground/80">Horário</p>
+                        <span>{barber.hours}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Instagram className="h-6 w-6 text-yellow-400" />
-                      <span>{barber.instagram}</span>
+                    <div className="flex items-start gap-3">
+                      <Instagram className="h-6 w-6 text-primary mt-1" />
+                       <div>
+                        <p className="font-semibold text-sm text-foreground/80">Instagram</p>
+                        <span>{barber.instagram}</span>
+                      </div>
                     </div>
                   </div>
-                  <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                    <Button
-                      asChild
-                      className="w-full font-bold text-lg py-6 bg-gradient-to-r from-yellow-400 to-green-500 text-black shadow-[0_0_15px_rgba(163,230,53,0.5)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(163,230,53,0.8)] hover:scale-105"
-                    >
-                      <Link href={barber.whatsappUrl} target="_blank">
+                  <div className="mt-auto grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+                    <Button asChild className="w-full font-bold text-lg py-6 bg-gradient-to-r from-primary to-accent text-primary-foreground shadow-[0_0_15px_rgba(255,215,0,0.4)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(76,175,80,0.6)] hover:scale-105">
+                      <Link href={barber.whatsapp} target="_blank">
                         Falar com {barber.name.split(" ")[0]}
                       </Link>
                     </Button>
-                    <Button
-                      asChild
-                      className="w-full font-bold text-lg py-6 bg-gradient-to-r from-yellow-400 to-green-500 text-black shadow-[0_0_15px_rgba(250,204,21,0.5)] transition-all duration-300 hover:shadow-[0_0_25px_rgba(250,204,21,0.8)] hover:scale-105"
-                    >
+                    <Button asChild variant="outline" className="w-full font-bold text-lg py-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-105">
                       <Link href={barber.mapsUrl} target="_blank">
                         Ver no Maps
                       </Link>
@@ -448,8 +422,31 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        {/* CTA Section */}
+        <section className="w-full py-12 md:py-24 bg-card/50">
+           <div className="container px-4 md:px-6">
+             <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline">
+                  Pronto para transformar seu visual?
+                </h2>
+                <p className="max-w-[600px] text-foreground/80 md:text-xl/relaxed">
+                  Não perca tempo! Nossos barbeiros estão prontos para criar o look perfeito para você. Agende agora e garante seu horário.
+                </p>
+                <div className="flex flex-col gap-4 min-[400px]:flex-row pt-4">
+                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 shadow-lg shadow-primary/20 transition-transform duration-300 hover:scale-105">
+                    <Link href={barbers[0].whatsapp} target="_blank">Falar com Diego</Link>
+                  </Button>
+                  <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-6 shadow-lg shadow-accent/20 transition-transform duration-300 hover:scale-105">
+                    <Link href={barbers[1].whatsapp} target="_blank">Falar com Carlos</Link>
+                  </Button>
+              </div>
+            </div>
+           </div>
+        </section>
+
       </main>
-      <AppFooter />
+      <AppFooter barbers={barbers} />
     </div>
   );
 }
