@@ -75,7 +75,7 @@ const galleryItems = [
   {
     id: "gallery-10",
     category: "Street Style",
-    title: "Fade",
+    title: "Riscos street",
     barber: "Diego Avelino",
   },
   {
@@ -87,7 +87,7 @@ const galleryItems = [
   {
     id: "gallery-5",
     category: "Street Style",
-    title: "Riscos street",
+    title: "Fade",
     barber: "Diego Avelino",
   },
   {
@@ -167,7 +167,7 @@ export default function Home() {
           id="home"
           className="relative w-full py-20 md:py-32 lg:py-40 border-b border-primary/10 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/HsfgNvV0/dark-black-trendy-abstract-urban-street-art-graffiti-style-vector-illustration-background-template-2.avif')",
+            backgroundImage: "url('https://i.postimg.cc/bwW9kbVw/thumb-1920-328292.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/80" />
@@ -547,6 +547,8 @@ export default function Home() {
 }
 
     
+    
+
     
 
     
