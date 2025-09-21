@@ -73,13 +73,13 @@ const barbers = [
 
 const galleryItems = [
   {
-    id: "gallery-10",
+    id: "gallery-9",
     category: "Street Style",
     title: "Fade",
     barber: "Diego Avelino",
   },
   {
-    id: "gallery-9",
+    id: "gallery-10",
     category: "Design",
     title: "Manutenção de Dreads",
     barber: "Carlos Davi",
@@ -227,7 +227,7 @@ export default function Home() {
           id="gallery"
           className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/sDtmrhFS/87d88046e835fd80d0d9be0a30ed79ca.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/5yWzrwQN/Captura-de-tela-2025-09-18-221954.png')",
           }}
         >
           <div className="absolute inset-0 bg-black/70" />
@@ -531,5 +531,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
