@@ -170,7 +170,7 @@ export default function Home() {
             backgroundImage: "url('https://i.postimg.cc/HsfgNvV0/dark-black-trendy-abstract-urban-street-art-graffiti-style-vector-illustration-background-template-2.avif')",
           }}
         >
-          <div className="absolute inset-0 bg-black/70" />
+          <div className="absolute inset-0 bg-black/80" />
           <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-8">
               <div className="space-y-4">
@@ -547,6 +547,8 @@ export default function Home() {
 }
 
     
+    
+
     
 
     
