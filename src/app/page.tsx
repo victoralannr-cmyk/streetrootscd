@@ -103,7 +103,7 @@ const galleryItems = [
   {
     id: "gallery-10",
     category: "Design",
-    title: "Riscos streets",
+    title: "Fade",
     barber: "Diego Avelino",
   },
 ];
