@@ -26,7 +26,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { getInformativos, Informativos } from "@/services/firestore";
+
 
 const barbers = [
   {
@@ -143,12 +143,11 @@ const InfoCard = ({
 );
 
 export default async function Home() {
-  let informativos: Informativos | null = null;
-  try {
-    informativos = await getInformativos();
-  } catch (error) {
-    console.error("Failed to fetch informativos:", error);
-  }
+  const informativos = {
+    horario: "Seg - Sáb: 8h às 19h",
+    localidades: "Duas Localidades",
+    atendimento: "Atendimento a Domicílio",
+  };
 
   return (
     <div className="flex min-h-dvh flex-col">
@@ -188,20 +187,15 @@ export default async function Home() {
           </div>
         </section>
 
-        {informativos && (
-          <section className="w-full py-8 bg-background border-y">
-            <div className="container px-4 md:px-6">
-              <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-center">
-                <InfoCard icon={Clock} text={informativos.horario} />
-                <InfoCard icon={Map} text={informativos.localidades} />
-                <InfoCard
-                  icon={Briefcase}
-                  text={informativos.atendimento}
-                />
-              </div>
+        <section className="w-full py-8 bg-background border-y">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-center">
+              <InfoCard icon={Clock} text={informativos.horario} />
+              <InfoCard icon={Map} text={informativos.localidades} />
+              <InfoCard icon={Briefcase} text={informativos.atendimento} />
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
         <section
           id="about"
@@ -459,5 +453,3 @@ export default async function Home() {
     </div>
   );
 }
-
-    
