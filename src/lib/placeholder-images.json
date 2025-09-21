@@ -59,6 +59,20 @@
       "description": "Trança nagô.",
       "imageUrl": "https://picsum.photos/seed/gallery8/400/400",
       "imageHint": "nago braid"
+    },
+    {
+      "id": "gallery-9",
+      "description": "Riscos streets.",
+      "imageUrl": "https://picsum.photos/seed/gallery9/400/400",
+      "imageHint": "street design"
+    },
+    {
+      "id": "gallery-10",
+      "description": "Riscos streets.",
+      "imageUrl": "https://picsum.photos/seed/gallery10/400/400",
+      "imageHint": "street design"
     }
   ]
 }
+
+    

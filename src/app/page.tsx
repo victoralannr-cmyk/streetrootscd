@@ -93,6 +93,18 @@ const galleryItems = [
     title: "Trança Nagô",
     barber: "Carlos Davi",
   },
+   {
+    id: "gallery-9",
+    category: "Design",
+    title: "Riscos streets",
+    barber: "Diego Avelino",
+  },
+  {
+    id: "gallery-10",
+    category: "Design",
+    title: "Riscos streets",
+    barber: "Diego Avelino",
+  },
 ];
 
 const filterCategories = [
@@ -432,3 +444,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
