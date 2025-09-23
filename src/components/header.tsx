@@ -76,5 +76,3 @@ export function AppHeader() {
     </header>
   );
 }
-
-    
