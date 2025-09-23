@@ -211,14 +211,6 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-4 min-[400px]:flex-row">
-                <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold text-lg px-8 py-6 shadow-lg shadow-primary/20 transition-transform duration-300 hover:scale-105">
-                  <Link href={barbers[0].whatsapp} target="_blank">Agendar com Diego</Link>
-                </Button>
-                <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold text-lg px-8 py-6 shadow-lg shadow-accent/20 transition-transform duration-300 hover:scale-105">
-                  <Link href={barbers[1].whatsapp} target="_blank">Agendar com Carlos</Link>
-                </Button>
-              </div>
             </div>
           </div>
         </section>
@@ -543,6 +535,8 @@ export default function Home() {
 
     
 
+
+    
 
     
 
