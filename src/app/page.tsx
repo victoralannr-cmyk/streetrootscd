@@ -81,7 +81,7 @@ const galleryItems = [
   {
     id: "gallery-10",
     category: "Design",
-    title: "Manuteção",
+    title: "Manutenção",
     barber: "Carlos Davi",
   },
   {
@@ -105,7 +105,7 @@ const galleryItems = [
   {
     id: "gallery-7",
     category: "Design",
-    title: "Manuteção",
+    title: "Manutenção",
     barber: "Diego Avelino",
   },
 ];
@@ -531,7 +531,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
