@@ -267,7 +267,7 @@ export default function Home() {
                 {filteredGallery.map((item) => {
                   const image = PlaceHolderImages.find((p) => p.id === item.id);
                   return (
-                    <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-[20%]">
+                    <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4">
                        <div className="group relative overflow-hidden rounded-lg bg-background aspect-square">
                         {image && (
                           <Image
@@ -535,4 +535,6 @@ export default function Home() {
 
     
     
+    
+
     
