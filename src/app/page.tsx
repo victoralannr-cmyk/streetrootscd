@@ -14,6 +14,7 @@ import {
   Award,
   Phone,
   Scissors,
+  Crown
 } from "lucide-react";
 import { AppHeader } from "@/components/header";
 import { AppFooter } from "@/components/footer";
@@ -167,15 +168,15 @@ export default function Home() {
           id="home"
           className="relative w-full py-20 md:py-32 lg:py-40 border-b border-primary/10 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/tJk2M5Tf/street-art-background.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/pXkcMTWJ/2c7d18559ee68b186dbab62e9b03639b.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/80" />
           <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-8">
               <div className="space-y-4">
-                <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl">
-                  A experiência certa muda sua vida.
+                 <h1 className="font-headline text-4xl font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl lg:text-7xl flex items-center justify-center gap-4">
+                  STREET ROOTS <Crown className="w-10 h-10 md:w-16 md:h-16" />
                 </h1>
                 <p className="max-w-[700px] mx-auto text-foreground/80 md:text-xl">
                   Aqui não é só corte, é estilo de vida. Você sai diferente,
@@ -227,14 +228,14 @@ export default function Home() {
           id="gallery"
           className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/tJk2M5Tf/street-art-background.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/sDtmrhFS/87d88046e835fd80d0d9be0a30ed79ca.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/70" />
           <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                Nossos Trabalhos
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary flex items-center gap-3">
+                <Crown className="w-8 h-8" /> Nossos Trabalhos <Crown className="w-8 h-8" />
               </h2>
               <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
                 Cada corte é uma transformação. Veja o antes e depois da
@@ -295,13 +296,13 @@ export default function Home() {
         {/* Pricing Section */}
         <section id="pricing" className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/tJk2M5Tf/street-art-background.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/NjncYbsD/569a3a1034dbe22073d4e73407320e4f.jpg')",
           }}>
            <div className="absolute inset-0 bg-black/70" />
           <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                Tabela de Preços
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary flex items-center gap-3">
+                <Crown className="w-8 h-8" /> Tabela de Preços <Crown className="w-8 h-8" />
               </h2>
               <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
                 Serviços de qualidade com preços justos. Escolha seu mestre e agende seu horário.
@@ -368,8 +369,8 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                  Nossos Mestres
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary flex items-center gap-3">
+                  <Crown className="w-8 h-8" /> Nossos Mestres <Crown className="w-8 h-8" />
                 </h2>
                 <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
                   Dois experts, duas especialidades. Mesmo padrão: excelência de
@@ -455,8 +456,8 @@ export default function Home() {
         <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
              <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary">
-                Quer transformar seu visual?
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary flex items-center gap-3">
+               <Crown className="w-8 h-8" />  Quer transformar seu visual? <Crown className="w-8 h-8" />
               </h2>
               <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
                 Chama no Whats! Duas localidades, mesmo padrão de excelência.
