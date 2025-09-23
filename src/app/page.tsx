@@ -168,7 +168,7 @@ export default function Home() {
           id="home"
           className="relative w-full py-20 md:py-32 lg:py-40 border-b border-primary/10 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/MZ1ZP9c2/Captura-de-tela-2025-09-22-224655.png')",
+            backgroundImage: "url('https://i.postimg.cc/vTPdbzx5/7a26a83d736e2a53cfbac3fda5c4036d.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/80" />
@@ -267,7 +267,7 @@ export default function Home() {
                 {filteredGallery.map((item) => {
                   const image = PlaceHolderImages.find((p) => p.id === item.id);
                   return (
-                    <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4">
+                    <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/3">
                        <div className="group relative overflow-hidden rounded-lg bg-background aspect-square">
                         {image && (
                           <Image
@@ -535,6 +535,8 @@ export default function Home() {
 
     
     
+    
+
     
 
     
