@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -8,7 +9,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const navLinks = [
   { href: "#about", label: "Mestres" },
-  { href: "#gallery", label: "Trabalhos" },
+  { href: "#gallery", label: "Clientes" },
   { href: "#pricing", label: "Preços" },
   { href: "#contact", label: "Contato" },
 ];
@@ -75,3 +76,5 @@ export function AppHeader() {
     </header>
   );
 }
+
+    

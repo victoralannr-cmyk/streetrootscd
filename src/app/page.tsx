@@ -235,7 +235,7 @@ export default function Home() {
           <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary flex items-center gap-3">
-                <Crown className="w-8 h-8" /> Nossos Trabalhos <Crown className="w-8 h-8" />
+                <Crown className="w-8 h-8" /> Clientes <Crown className="w-8 h-8" />
               </h2>
               <p className="max-w-[900px] text-foreground/80 md:text-xl/relaxed">
                 Cada corte é uma transformação. Veja o antes e depois da
@@ -533,4 +533,5 @@ export default function Home() {
   );
 }
 
+    
     
