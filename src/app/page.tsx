@@ -75,13 +75,13 @@ const galleryItems = [
   {
     id: "gallery-9",
     category: "Fade",
-    title: "Fade",
+    title: "Manutenção",
     barber: "Diego Avelino",
   },
   {
     id: "gallery-10",
     category: "Design",
-    title: "Manutenção",
+    title: "Fade",
     barber: "Carlos Davi",
   },
   {
@@ -167,7 +167,7 @@ export default function Home() {
           id="home"
           className="relative w-full py-20 md:py-32 lg:py-40 border-b border-primary/10 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/bwW9kbVw/thumb-1920-328292.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/tJk2M5Tf/street-art-background.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/80" />
@@ -227,7 +227,7 @@ export default function Home() {
           id="gallery"
           className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/5yWzrwQN/Captura-de-tela-2025-09-18-221954.png')",
+            backgroundImage: "url('https://i.postimg.cc/tJk2M5Tf/street-art-background.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/70" />
@@ -295,7 +295,7 @@ export default function Home() {
         {/* Pricing Section */}
         <section id="pricing" className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/NjncYbsD/569a3a1034dbe22073d4e73407320e4f.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/tJk2M5Tf/street-art-background.jpg')",
           }}>
            <div className="absolute inset-0 bg-black/70" />
           <div className="container relative px-4 md:px-6">
