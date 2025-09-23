@@ -30,7 +30,7 @@ export function AppHeader() {
           />
         </Link>
         
-        <nav className="hidden md:flex gap-6 items-center">
+        <nav className="hidden md:flex gap-6 items-center font-body">
           {navLinks.map((link) => (
             <Link
               key={link.href}
