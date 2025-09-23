@@ -261,13 +261,13 @@ export default function Home() {
                 align: "start",
                 loop: true,
               }}
-              className="w-full"
+              className="w-full max-w-6xl mx-auto"
             >
-              <CarouselContent>
+              <CarouselContent className="-ml-2 md:-ml-4">
                 {filteredGallery.map((item) => {
                   const image = PlaceHolderImages.find((p) => p.id === item.id);
                   return (
-                    <CarouselItem key={item.id} className="basis-full md:basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
                        <div className="group relative overflow-hidden rounded-lg bg-background aspect-square">
                         {image && (
                           <Image
@@ -287,8 +287,8 @@ export default function Home() {
                   );
                 })}
               </CarouselContent>
-              <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
-              <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+              <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
+              <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 z-10 hidden sm:flex" />
             </Carousel>
           </div>
         </section>
