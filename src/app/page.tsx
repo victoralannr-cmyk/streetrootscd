@@ -228,7 +228,7 @@ export default function Home() {
           id="gallery"
           className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/sDtmrhFS/87d88046e835fd80d0d9be0a30ed79ca.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/5yWzrwQN/Captura-de-tela-2025-09-18-221954.png')",
           }}
         >
           <div className="absolute inset-0 bg-black/70" />
@@ -261,13 +261,13 @@ export default function Home() {
                 align: "start",
                 loop: true,
               }}
-              className="w-full max-w-6xl mx-auto"
+              className="w-full max-w-7xl mx-auto"
             >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {filteredGallery.map((item) => {
                   const image = PlaceHolderImages.find((p) => p.id === item.id);
                   return (
-                    <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5">
+                    <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-[20%]">
                        <div className="group relative overflow-hidden rounded-lg bg-background aspect-square">
                         {image && (
                           <Image
@@ -532,3 +532,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
