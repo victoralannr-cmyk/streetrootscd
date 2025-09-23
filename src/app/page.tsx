@@ -75,13 +75,13 @@ const galleryItems = [
   {
     id: "gallery-9",
     category: "Street Style",
-    title: "Manuteção",
+    title: "Fade",
     barber: "Diego Avelino",
   },
   {
     id: "gallery-10",
     category: "Design",
-    title: "Fade",
+    title: "Manuteção",
     barber: "Carlos Davi",
   },
   {
@@ -122,7 +122,7 @@ const filterCategories = [
 
 const pricing = {
   diego: [
-    { service: "Corte (Social ou Degradê)", price: "R$ 40" },
+    { service: "Corte (Social ou Degradê)", price: "R$ 30" },
     { service: "Barboterapia", price: "R$ 30" },
     { service: "Corte + Barba", price: "R$ 60" },
     { service: "Sobrancelha (Navalha ou Pinça)", price: "R$ 15" },
@@ -531,3 +531,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
