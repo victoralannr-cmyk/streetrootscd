@@ -364,9 +364,11 @@ export default function Home() {
         {/* Barbers Section */}
         <section
           id="about"
-          className="w-full py-12 md:py-24 lg:py-32 bg-card/50"
+          className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center"
+           style={{ backgroundImage: "url('https://i.postimg.cc/6pbLnGnz/bad927d5544cb67c739adcec8da4fbf0.jpg')" }}
         >
-          <div className="container px-4 md:px-6">
+          <div className="absolute inset-0 bg-black/70" />
+          <div className="container relative px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl font-headline text-primary flex items-center gap-3">
@@ -382,7 +384,7 @@ export default function Home() {
               {barbers.map((barber) => (
                 <Card
                   key={barber.name}
-                  className="bg-card flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-border hover:border-primary/50"
+                  className="bg-card/80 backdrop-blur-sm flex flex-col transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border-border hover:border-primary/50"
                 >
                   <CardHeader className="p-0">
                     <div className="relative">
@@ -541,5 +543,7 @@ export default function Home() {
 
     
 
+
+    
 
     
