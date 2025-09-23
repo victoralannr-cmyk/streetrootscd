@@ -168,7 +168,7 @@ export default function Home() {
           id="home"
           className="relative w-full py-20 md:py-32 lg:py-40 border-b border-primary/10 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/pXkcMTWJ/2c7d18559ee68b186dbab62e9b03639b.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/MZ1ZP9c2/Captura-de-tela-2025-09-22-224655.png')",
           }}
         >
           <div className="absolute inset-0 bg-black/80" />
@@ -533,5 +533,6 @@ export default function Home() {
   );
 }
 
+    
     
     
