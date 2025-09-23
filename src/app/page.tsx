@@ -74,7 +74,7 @@ const barbers = [
 const galleryItems = [
   {
     id: "gallery-9",
-    category: "Street Style",
+    category: "Fade",
     title: "Fade",
     barber: "Diego Avelino",
   },
@@ -531,5 +531,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
