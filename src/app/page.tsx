@@ -160,7 +160,7 @@ export default function Home() {
       : galleryItems.filter((item) => item.category === activeFilter);
 
   return (
-    <div className="flex min-h-dvh flex-col bg-background">
+    <div className="flex min-h-dvh flex-col bg-background font-body">
       <AppHeader />
       <main className="flex-1">
         {/* Hero Section */}

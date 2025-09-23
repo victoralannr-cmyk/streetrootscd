@@ -31,7 +31,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${inter.variable} ${tradeWinds.variable} dark scroll-smooth`}
     >
-      <body className="font-body bg-background text-foreground antialiased">
+      <body className="bg-background text-foreground antialiased">
         {children}
         <Toaster />
         <Analytics />
