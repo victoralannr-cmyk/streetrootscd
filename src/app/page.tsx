@@ -75,7 +75,7 @@ const galleryItems = [
   {
     id: "gallery-9",
     category: "Fade",
-    title: "Manutenção",
+    title: "Dread Locks",
     barber: "Diego Avelino",
   },
   {
@@ -105,7 +105,7 @@ const galleryItems = [
   {
     id: "gallery-7",
     category: "Design",
-    title: "Manutenção",
+    title: "Dread Locks",
     barber: "Diego Avelino",
   },
 ];
