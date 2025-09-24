@@ -123,11 +123,13 @@ const filterCategories = [
 
 const pricing = {
   diego: [
-    { service: "Corte (Social ou Degradê)", price: "R$ 30" },
-    { service: "Barboterapia", price: "R$ 30" },
-    { service: "Corte + Barba", price: "R$ 60" },
-    { service: "Sobrancelha (Navalha ou Pinça)", price: "R$ 15" },
-    { service: "Riscos e Desenhos", price: "a partir de R$ 10" },
+    { service: "Social", price: "R$ 20" },
+    { service: "Degradê", price: "R$ 25" },
+    { service: "Sobrancelha", price: "R$ 10" },
+    { service: "Barba", price: "R$ 20" },
+    { service: "Combo corte e sobrancelha", price: "R$ 30" },
+    { service: "Manutenção de dread Lock (preço padrão)", price: "R$ 50" },
+    { service: "Luzes", price: "R$ 70" }
   ],
   carlos: [
     { service: "Manutenção de Dreads", price: "R$ 100" },
