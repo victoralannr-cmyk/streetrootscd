@@ -105,7 +105,7 @@ const galleryItems = [
   {
     id: "gallery-7",
     category: "Design",
-    title: "Dread Locks",
+    title: "Degradê",
     barber: "Diego Avelino",
   },
 ];
