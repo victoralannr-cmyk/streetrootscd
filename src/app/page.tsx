@@ -3,7 +3,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import {
   Instagram,
   Star,
@@ -110,16 +109,6 @@ const galleryItems = [
   },
 ];
 
-const filterCategories = [
-  "Todos",
-  "Street Style",
-  "Dreadlocks",
-  "Tranças",
-  "Urban Cut",
-  "Design",
-  "Manutenção",
-];
-
 const pricing = {
   diego: [
     { service: "Social", price: "R$ 20" },
@@ -153,12 +142,6 @@ const InfoCard = ({
 );
 
 export default function Home() {
-  const [activeFilter, setActiveFilter] = useState("Todos");
-
-  const filteredGallery =
-    activeFilter === "Todos"
-      ? galleryItems
-      : galleryItems.filter((item) => item.category === activeFilter);
 
   return (
     <div className="flex min-h-dvh flex-col bg-background font-body">
@@ -236,19 +219,6 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="flex justify-center flex-wrap gap-2 mb-8">
-              {filterCategories.map((category) => (
-                <Button
-                  key={category}
-                  variant={activeFilter === category ? "default" : "secondary"}
-                  onClick={() => setActiveFilter(category)}
-                  className={`font-semibold rounded-full px-4 py-2 text-sm transition-colors ${activeFilter === category ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'}`}
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-
             <Carousel
               opts={{
                 align: "start",
@@ -257,7 +227,7 @@ export default function Home() {
               className="w-full max-w-7xl mx-auto"
             >
               <CarouselContent className="-ml-2 md:-ml-4">
-                {filteredGallery.map((item) => {
+                {galleryItems.map((item) => {
                   const image = PlaceHolderImages.find((p) => p.id === item.id);
                   return (
                     <CarouselItem key={item.id} className="pl-2 md:pl-4 basis-1/2 sm:basis-1/3 md:basis-1/3">
@@ -319,7 +289,7 @@ export default function Home() {
                   </Table>
                 </CardContent>
                  <CardFooter className="p-6 mt-auto">
-                    <Button asChild className="w-full font-bold text-lg py-6 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 transition-transform duration-300 hover:scale-105">
+                    <Button asChild style={{ backgroundColor: '#faff32', color: 'black' }} className="w-full font-bold text-lg py-6 shadow-lg hover:bg-yellow-300/90 transition-transform duration-300 hover:scale-105">
                       <Link href={barbers[0].whatsapp} target="_blank">
                         Agendar com {barbers[0].name.split(" ")[0]}
                       </Link>
