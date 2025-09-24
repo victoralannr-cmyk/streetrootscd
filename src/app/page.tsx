@@ -120,11 +120,13 @@ const pricing = {
     { service: "Luzes", price: "R$ 70" }
   ],
   carlos: [
-    { service: "Manutenção de Dreads", price: "R$ 100" },
-    { service: "Trança Nagô", price: "a partir de R$ 80" },
-    { service: "Twist / Tranças", price: "a partir de R$ 70" },
-    { service: "Corte Afro", price: "R$ 50" },
-    { service: "Corte Infantil", price: "R$ 35" },
+    { service: "Degrade", price: "R$ 20" },
+    { service: "Corte Navalhado", price: "R$ 25" },
+    { service: "Sobrancelha", price: "R$ 5" },
+    { service: "Barba", price: "R$ 10" },
+    { service: "Starter Locks - comb coils", price: "$80" },
+    { service: "Locks", price: "$70" },
+    { service: "Trança nagô", price: "$70 base" },
   ]
 };
 
