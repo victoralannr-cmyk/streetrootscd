@@ -318,7 +318,7 @@ export default function Home() {
                   </Table>
                 </CardContent>
                  <CardFooter className="p-6 mt-auto">
-                    <Button asChild className="w-full font-bold text-lg py-6 bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 transition-transform duration-300 hover:scale-105">
+                    <Button asChild className="w-full font-bold text-lg py-6 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 transition-transform duration-300 hover:scale-105">
                       <Link href={barbers[0].whatsapp} target="_blank">
                         Agendar com {barbers[0].name.split(" ")[0]}
                       </Link>
@@ -535,6 +535,8 @@ export default function Home() {
 
     
 
+
+    
 
     
 
