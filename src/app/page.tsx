@@ -47,8 +47,7 @@ const barbers = [
     experience: "6+ anos de experiência",
     location: "Don Fragoso Q28 L05",
     image: PlaceHolderImages.find((p) => p.id === "diego-profile"),
-    whatsapp:
-      "https://wa.me/5511999999991?text=Olá%20Diego,%20gostaria%20de%20agendar%20um%20corte!",
+    whatsapp: "https://calendly.com/diegoopisciano",
     instagram: "@diego.avelino.barber",
     phone: "",
     hours: "Seg-Sex: 8h-19h | Sáb: 8h-17h",
@@ -453,3 +452,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
