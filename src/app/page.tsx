@@ -205,7 +205,7 @@ export default function Home() {
           id="gallery"
           className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/bvT1Zk36/f0751715244a1a200f2d618cd67ed6c5.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/bvKnZPnv/fcfa2abe85c82ad353c6be2b79f3cf02.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/70" />
@@ -423,3 +423,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
