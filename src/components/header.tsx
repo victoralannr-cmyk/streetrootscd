@@ -30,7 +30,19 @@ export function AppHeader() {
           />
         </Link>
         
-        <div className="hidden md:flex flex-1 justify-center items-center">
+        <nav className="hidden md:flex gap-6 items-center font-body flex-1 justify-center">
+          <Link
+            href="#about"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+          >
+            Mestres
+          </Link>
+           <Link
+            href="#gallery"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+          >
+            Clientes
+          </Link>
           <Link href="/">
              <Image
                 src={centerLogoUrl}
@@ -40,18 +52,12 @@ export function AppHeader() {
                 className="object-contain"
               />
           </Link>
-        </div>
-
-        <nav className="hidden md:flex gap-6 items-center font-body">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-            >
-              {link.label}
-            </Link>
-          ))}
+           <Link
+            href="#pricing"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+          >
+            Preços
+          </Link>
         </nav>
 
         {/* Mobile Menu */}
