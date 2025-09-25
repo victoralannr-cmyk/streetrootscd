@@ -125,7 +125,7 @@ const pricing = {
     { service: "Sobrancelha", price: "R$ 5" },
     { service: "Barba", price: "R$ 10" },
     { service: "Starter Locks - comb coils", price: "$80" },
-    { service: "Locks", price: "$70" },
+    { service: "Manutenção - Palm Rolling", price: "$70" },
     { service: "Trança nagô", price: "$70 base" },
   ]
 };
@@ -424,5 +424,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
