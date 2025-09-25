@@ -329,7 +329,7 @@ export default function Home() {
         <section
           id="about"
           className="relative w-full py-12 md:py-24 lg:py-32 bg-cover bg-center"
-           style={{ backgroundImage: "url('https://i.postimg.cc/G3TYnHZs/6c4ae0ad53c8ac8a80b2479cb3667292.jpg')" }}
+           style={{ backgroundImage: "url('https://i.postimg.cc/13bhT76F/c9b5f6deb22449c354daa04e0c20d539.jpg')" }}
         >
           <div className="absolute inset-0 bg-black/70" />
           <div className="container relative px-4 md:px-6">
@@ -424,4 +424,3 @@ export default function Home() {
   );
 }
 
-    
