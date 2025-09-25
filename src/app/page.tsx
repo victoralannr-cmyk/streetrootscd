@@ -61,8 +61,7 @@ const barbers = [
     experience: "3+ anos de experiência",
     location: "R. Jose Regino 475 - Venâncios",
     image: PlaceHolderImages.find((p) => p.id === "carlos-profile"),
-    whatsapp:
-      "https://wa.me/558598424344?text=Olá%20Carlos,%20gostaria%20de%20agendar%20um%20corte!",
+    whatsapp: "https://calendly.com/carlosdavialvesdonascimento",
     instagram: "@carlos.davi.dreads",
     phone: "",
     hours: "Seg-Sex: 9h-19h | Sáb: 9h-16h",
