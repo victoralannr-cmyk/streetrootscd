@@ -79,8 +79,8 @@ const galleryItems = [
   {
     id: "gallery-10",
     category: "Design",
-    title: "Fade",
-    barber: "Carlos Davi",
+    title: "Degradê",
+    barber: "Diego Avelino",
   },
   {
     id: "gallery-5",
@@ -153,7 +153,7 @@ export default function Home() {
           id="home"
           className="relative w-full py-20 md:py-32 lg:py-40 border-b border-primary/10 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://i.postimg.cc/vTPdbzx5/7a26a83d736e2a53cfbac3fda5c4036d.jpg')",
+            backgroundImage: "url('https://i.postimg.cc/13bhT76F/c9b5f6deb22449c354daa04e0c20d539.jpg')",
           }}
         >
           <div className="absolute inset-0 bg-black/80" />
@@ -423,5 +423,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
