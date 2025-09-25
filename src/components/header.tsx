@@ -49,8 +49,11 @@ export function AppHeader() {
           >
             Preços
           </Link>
+        </nav>
+
+        <div className="hidden md:flex">
           <Link href="/">
-             <Image
+              <Image
                 src={centerLogoUrl}
                 alt="Center Logo"
                 width={120}
@@ -58,8 +61,8 @@ export function AppHeader() {
                 className="object-contain"
               />
           </Link>
-        </nav>
-
+        </div>
+        
         {/* Mobile Menu */}
         <div className="md:hidden">
           <Sheet>
