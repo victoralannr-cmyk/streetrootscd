@@ -43,6 +43,12 @@ export function AppHeader() {
           >
             Clientes
           </Link>
+           <Link
+            href="#pricing"
+            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+          >
+            Preços
+          </Link>
           <Link href="/">
              <Image
                 src={centerLogoUrl}
@@ -51,12 +57,6 @@ export function AppHeader() {
                 height={70}
                 className="object-contain"
               />
-          </Link>
-           <Link
-            href="#pricing"
-            className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
-          >
-            Preços
           </Link>
         </nav>
 
