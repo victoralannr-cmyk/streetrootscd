@@ -14,6 +14,7 @@ const navLinks = [
 ];
 
 const logoUrl = "https://i.postimg.cc/T1pnh9v9/550494427-24780280111639226-1572840491972429960-n-removebg-preview.png";
+const centerLogoUrl = "https://i.postimg.cc/TwKpq4r4/548866302-1158365139680295-1105138111229096191-n-1-removebg-preview.png";
 
 export function AppHeader() {
   return (
@@ -29,6 +30,18 @@ export function AppHeader() {
           />
         </Link>
         
+        <div className="hidden md:flex flex-1 justify-center items-center">
+          <Link href="/">
+             <Image
+                src={centerLogoUrl}
+                alt="Center Logo"
+                width={70}
+                height={70}
+                className="object-contain"
+              />
+          </Link>
+        </div>
+
         <nav className="hidden md:flex gap-6 items-center font-body">
           {navLinks.map((link) => (
             <Link
@@ -51,7 +64,16 @@ export function AppHeader() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-card">
-              <nav className="grid gap-6 text-lg font-medium mt-16 text-center">
+              <div className="flex justify-center mt-8">
+                 <Image
+                    src={centerLogoUrl}
+                    alt="Center Logo"
+                    width={80}
+                    height={80}
+                    className="object-contain"
+                  />
+              </div>
+              <nav className="grid gap-6 text-lg font-medium mt-8 text-center">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
