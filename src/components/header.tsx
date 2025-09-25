@@ -11,7 +11,6 @@ const navLinks = [
   { href: "#about", label: "Mestres" },
   { href: "#gallery", label: "Clientes" },
   { href: "#pricing", label: "Preços" },
-  { href: "#contact", label: "Contato" },
 ];
 
 const logoUrl = "https://i.postimg.cc/T1pnh9v9/550494427-24780280111639226-1572840491972429960-n-removebg-preview.png";
@@ -40,9 +39,6 @@ export function AppHeader() {
               {link.label}
             </Link>
           ))}
-           <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md shadow-primary/20 transition-transform duration-300 hover:scale-105">
-              <Link href="#contact">Agendar Horário</Link>
-            </Button>
         </nav>
 
         {/* Mobile Menu */}
@@ -65,9 +61,6 @@ export function AppHeader() {
                     {link.label}
                   </Link>
                 ))}
-                <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-md shadow-primary/20">
-                  <Link href="#contact">Agendar Horário</Link>
-                </Button>
               </nav>
             </SheetContent>
           </Sheet>
