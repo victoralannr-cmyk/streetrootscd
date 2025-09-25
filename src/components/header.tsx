@@ -53,8 +53,8 @@ export function AppHeader() {
              <Image
                 src={centerLogoUrl}
                 alt="Center Logo"
-                width={70}
-                height={70}
+                width={120}
+                height={60}
                 className="object-contain"
               />
           </Link>
@@ -74,7 +74,7 @@ export function AppHeader() {
                  <Image
                     src={centerLogoUrl}
                     alt="Center Logo"
-                    width={80}
+                    width={120}
                     height={80}
                     className="object-contain"
                   />
