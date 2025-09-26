@@ -13,7 +13,8 @@ import {
   Award,
   Phone,
   Scissors,
-  Crown
+  Crown,
+  Whatsapp
 } from "lucide-react";
 import { AppHeader } from "@/components/header";
 import { AppFooter } from "@/components/footer";
@@ -290,10 +291,15 @@ export default function Home() {
                     </TableBody>
                   </Table>
                 </CardContent>
-                 <CardFooter className="p-6 mt-auto">
+                 <CardFooter className="p-6 mt-auto flex gap-2">
                     <Button asChild style={{ backgroundColor: '#faff32', color: 'black' }} className="w-full font-bold text-lg py-6 shadow-lg hover:bg-yellow-300/90 transition-transform duration-300 hover:scale-105">
                       <Link href={barbers[0].whatsapp} target="_blank">
                         Agendar com {barbers[0].name.split(" ")[0]}
+                      </Link>
+                    </Button>
+                    <Button asChild style={{ backgroundColor: '#25D366', color: 'white' }} className="font-bold text-lg py-6 px-4 shadow-lg hover:bg-green-500/90 transition-transform duration-300 hover:scale-105">
+                      <Link href={`https://wa.me/`} target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                       </Link>
                     </Button>
                   </CardFooter>
@@ -314,10 +320,15 @@ export default function Home() {
                     </TableBody>
                   </Table>
                 </CardContent>
-                 <CardFooter className="p-6 mt-auto">
+                 <CardFooter className="p-6 mt-auto flex gap-2">
                     <Button asChild className="w-full font-bold text-lg py-6 bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 transition-transform duration-300 hover:scale-105">
                       <Link href={barbers[1].whatsapp} target="_blank">
                         Agendar com {barbers[1].name.split(" ")[0]}
+                      </Link>
+                    </Button>
+                     <Button asChild style={{ backgroundColor: '#25D366', color: 'white' }} className="font-bold text-lg py-6 px-4 shadow-lg hover:bg-green-500/90 transition-transform duration-300 hover:scale-105">
+                      <Link href={`https://wa.me/`} target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                       </Link>
                     </Button>
                   </CardFooter>
@@ -424,6 +435,5 @@ export default function Home() {
     </div>
   );
 }
-
 
     
