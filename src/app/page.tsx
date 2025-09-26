@@ -123,9 +123,10 @@ const pricing = {
     { service: "Corte Navalhado", price: "R$ 25" },
     { service: "Sobrancelha", price: "R$ 5" },
     { service: "Barba", price: "R$ 10" },
-    { service: "Starter Locks - comb coils", price: "$80" },
-    { service: "Manutenção - Palm Rolling", price: "$70" },
-    { service: "Trança nagô", price: "$70 base" },
+    { service: "Starter Locks - comb coils", price: "R$ 80" },
+    { service: "Manutenção - Palm Rolling", price: "R$ 70" },
+    { service: "Trança nagô", price: "R$ 70 base" },
+    { service: "Atendimento a Domicílio", price: "R$ 45" }
   ]
 };
 
@@ -424,3 +425,5 @@ export default function Home() {
   );
 }
 
+
+    
