@@ -117,7 +117,8 @@ const pricing = {
     { service: "Barba", price: "R$ 20" },
     { service: "Combo corte e sobrancelha", price: "R$ 30" },
     { service: "Manutenção de dread Lock (preço padrão)", price: "R$ 50" },
-    { service: "Luzes", price: "R$ 70" }
+    { service: "Luzes", price: "R$ 70" },
+    { service: "Atendimento a Domicílio", price: "" }
   ],
   carlos: [
     { service: "Degrade", price: "R$ 20" },
