@@ -118,7 +118,7 @@ const pricing = {
     { service: "Combo corte e sobrancelha", price: "R$ 30" },
     { service: "Manutenção de dread Lock (preço padrão)", price: "R$ 50" },
     { service: "Luzes", price: "R$ 70" },
-    { service: "Atendimento a Domicílio", price: "" }
+    { service: "Atendimento a Domicílio", price: "R$ 45" }
   ],
   carlos: [
     { service: "Degrade", price: "R$ 20" },
@@ -128,7 +128,6 @@ const pricing = {
     { service: "Starter Locks - comb coils", price: "R$ 80" },
     { service: "Manutenção - Palm Rolling", price: "R$ 70" },
     { service: "Trança nagô", price: "R$ 70 base" },
-    { service: "Atendimento a Domicílio", price: "R$ 45" }
   ]
 };
 
@@ -436,5 +435,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
